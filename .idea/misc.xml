@@ -6,9 +6,10 @@
         <entry key="..\:/Android/Petbomi/app/src/main/res/drawable/bg_button.xml" value="0.187" />
         <entry key="..\:/Android/Petbomi/app/src/main/res/drawable/bg_edit.xml" value="0.1" />
         <entry key="..\:/Android/Petbomi/app/src/main/res/drawable/bg_green.xml" value="0.1" />
+        <entry key="..\:/Android/Petbomi/app/src/main/res/drawable/line.xml" value="0.1" />
         <entry key="..\:/Android/Petbomi/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
-        <entry key="..\:/Android/Petbomi/app/src/main/res/layout/activity_main.xml" value="0.13333333333333333" />
-        <entry key="..\:/Android/Petbomi/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Android/Petbomi/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/Petbomi/app/src/main/res/layout/activity_register.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>
