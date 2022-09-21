@@ -6,14 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        TextView text=(TextView) findViewById(R.id.registerButton);
+        text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton imagebutton= (ImageButton) findViewById(R.id.backbtn);
 

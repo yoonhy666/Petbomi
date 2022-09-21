@@ -216,7 +216,8 @@
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
-                    android:textColorHint="#B5B5B5" />
+                    android:textColorHint="#B5B5B5"
+                    android:entries="@array/gender"/>
 
                 <ImageView
                     android:src="@drawable/line"
