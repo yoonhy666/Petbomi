@@ -146,7 +146,7 @@
                 </EditText>
                 <EditText
                     android:id="@+id/email"
-                    android:inputType="textPassword"
+                    android:inputType="textEmailAddress"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -162,7 +162,7 @@
                 </EditText>
                 <EditText
                     android:id="@+id/phnum"
-                    android:inputType="textPassword"
+                    android:inputType="phone"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -177,7 +177,7 @@
                 </EditText>
                 <EditText
                     android:id="@+id/nickname"
-                    android:inputType="textPassword"
+
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -192,7 +192,7 @@
                 </EditText>
                 <EditText
                     android:id="@+id/age"
-
+                    android:inputType="number"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -224,6 +224,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_margin="20dp"/>
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="주소 입력"
+                    android:textColor="@color/black"
+                    android:textSize="19dp"
+                    android:textStyle="bold"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/bg_edit"
+                    android:hint="주소"
+                   android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B5B5B5"
+                    tools:ignore="InvalidId">
+
+                </EditText>
+                <EditText
+
+
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edit"
+                    android:hint="상세 주소"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B5B5B5"
+                    tools:ignore="InvalidId">
+
+                </EditText>
+
+                <ImageView
+                    android:src="@drawable/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_margin="20dp"/>
+
+                <Button
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:text="다음"
+                    android:textSize="17dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_button"
+                    />
 
 
             </LinearLayout>
