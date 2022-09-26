@@ -67,13 +67,13 @@
                     />
 
                 <EditText
-                    android:id="@+id/idText"
+                    android:id="@+id/emailText"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="25dp"
                     android:background="@drawable/bg_edit"
-                    android:hint="아이디를 입력하세요."
+                    android:hint="이메일를 입력하세요."
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
@@ -144,22 +144,7 @@
                     tools:ignore="InvalidId">
 
                 </EditText>
-                <EditText
-                    android:id="@+id/email"
-                    android:inputType="textEmailAddress"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_edit"
-                    android:hint="이메일"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="#B5B5B5"
-                    tools:ignore="InvalidId">
 
-                </EditText>
                 <EditText
                     android:id="@+id/phnum"
                     android:inputType="phone"
@@ -252,9 +237,11 @@
                     tools:ignore="InvalidId">
 
                 </EditText>
+
                 <EditText
 
 
+                    android:id="@+id/et_address2"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

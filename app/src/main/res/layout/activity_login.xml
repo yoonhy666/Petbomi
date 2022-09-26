@@ -70,13 +70,13 @@
                 />
 
             <EditText
-                android:id="@+id/idText"
+                android:id="@+id/emailText"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/bg_edit"
-                android:hint="아이디를 입력하세요."
+                android:hint="이메일을 입력하세요."
                 android:minHeight="48dp"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -102,15 +102,15 @@
             </EditText>
 
             <Button
+                android:id="@+id/loginbtn"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="로그인"
-                android:textSize="17dp"
-                android:textColor="@color/black"
                 android:background="@drawable/bg_button"
-                />
+                android:text="로그인"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/registerButton"

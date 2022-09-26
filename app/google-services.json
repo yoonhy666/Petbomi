@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "988116946604",
+    "project_id": "petbomi-9a488",
+    "storage_bucket": "petbomi-9a488.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988116946604:android:65a75f0f5d4b709abb1909",
+        "android_client_info": {
+          "package_name": "com.example.petbomi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988116946604-ah28uon1ch7gk2fktnq2us2irvc4padp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVW7B8dF-0sN-DrysFiwKaqkCMXOomchM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988116946604-ah28uon1ch7gk2fktnq2us2irvc4padp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
