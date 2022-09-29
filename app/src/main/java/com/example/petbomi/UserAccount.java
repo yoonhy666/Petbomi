@@ -4,6 +4,9 @@ package com.example.petbomi;
  * 사용자 계정 정보 보낼 클래스
  */
 public class UserAccount {
+
+
+    private String IdToken;
     private String emailId;
     private String password;
     private String name;
@@ -15,6 +18,13 @@ public class UserAccount {
     private String address2;
 
     public UserAccount(){} //리얼타임데이터베이스 사용시 빈 생성자 반드시 있어야함
+    public String getIdToken() {
+        return IdToken;
+    }
+
+    public void setIdToken(String idToken) {
+        IdToken = idToken;
+    }
 
     public String getEmailId() {
         return emailId;
