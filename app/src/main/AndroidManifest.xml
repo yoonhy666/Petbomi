@@ -28,7 +28,8 @@
 
         <activity
             android:name=".RegisterActivity"
-            android:exported="true">
+            android:exported="true"
+            android:usesCleartextTraffic="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

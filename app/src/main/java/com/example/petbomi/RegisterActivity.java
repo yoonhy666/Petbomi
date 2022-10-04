@@ -63,6 +63,8 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
+
+
         mEtAddress=findViewById(R.id.et_address);
         mEtAddress.setFocusable(false);
         mEtAddress.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.signUpButton).setOnClickListener(onClickListener);
-
+        mAuth=FirebaseAuth.getInstance();
     }
 
 
@@ -116,6 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void SignUp(){
         String email=((EditText)findViewById(R.id.emailText)).getText().toString();
         String password=((EditText)findViewById(R.id.passwordText)).getText().toString();
+        String passwordCheck = ((EditText)findViewById(R.id.passwordText_re)).getText().toString();
         String name=((EditText)findViewById(R.id.name)).getText().toString();
         String phone=((EditText)findViewById(R.id.phone)).getText().toString();
         String nickname=((EditText)findViewById(R.id.nickname)).getText().toString();
@@ -147,6 +150,7 @@ public class RegisterActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                            //ui
+
 
                         }
                     }
