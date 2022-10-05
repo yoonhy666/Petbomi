@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -30,6 +31,7 @@
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="27dp"
                     android:src="@drawable/backicon"
+                    style="?android:borderlessButtonStyle"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                 <TextView
@@ -40,7 +42,7 @@
                     android:textSize="17dp"
                     android:textStyle="bold"
                     android:layout_marginTop="23dp"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="125dp"
 
                     />
             </LinearLayout>
@@ -59,7 +61,11 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
+<<<<<<< HEAD
                     android:layout_marginTop="30dp"
+=======
+                    android:layout_marginTop="45dp"
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:text="아이디/비밀번호 입력"
                     android:textColor="@color/black"
                     android:textSize="19dp"
@@ -118,14 +124,18 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
+<<<<<<< HEAD
                     android:layout_margin="20dp"
                     android:src="@drawable/line" />
 
+=======
+                    android:layout_margin="30dp"/>
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
-                    android:layout_marginTop="20dp"
+
                     android:text="회원정보 입력"
                     android:textColor="@color/black"
                     android:textSize="19dp"
@@ -167,7 +177,12 @@
                 </EditText>
 
                 <EditText
+<<<<<<< HEAD
                     android:id="@+id/phnum"
+=======
+                    android:id="@+id/phone"
+                    android:inputType="phone"
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -203,15 +218,26 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_edit"
+<<<<<<< HEAD
                     android:clickable="true"
                     android:editable="false"
                     android:focusable="false"
+=======
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:hint="생년월일"
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#B5B5B5"
+<<<<<<< HEAD
                     tools:ignore="Deprecated"></EditText>
+=======
+                    tools:ignore="Deprecated,InvalidId"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="false">
+                </EditText>
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
 
                 <TextView
                     android:layout_width="200dp"
@@ -242,7 +268,11 @@
                 </EditText>
 
                 <RadioGroup
+<<<<<<< HEAD
                     android:id="@+id/kind"
+=======
+                    android:id="@+id/petkind"
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -274,7 +304,11 @@
                 </RadioGroup>
 
                 <RadioGroup
+<<<<<<< HEAD
                     android:id="@+id/gender"
+=======
+                    android:id="@+id/petgender"
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -321,7 +355,10 @@
 
                 </EditText>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -368,6 +405,23 @@
 
                 </EditText>
 
+                <EditText
+                    android:id="@+id/etc"
+                    android:layout_width="350dp"
+                    android:layout_height="218dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_edit"
+                    android:hint="참고사항 입력"
+                    android:scrollbars="vertical"
+                    android:inputType="text|textMultiLine"
+                    android:lines="20"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B5B5B5"
+                    tools:ignore="InvalidId"/>
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
@@ -394,10 +448,18 @@
                 </EditText>
 
                 <Button
+                    android:id="@+id/signUpButton"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+<<<<<<< HEAD
                     android:layout_margin="20dp"
+=======
+                    android:layout_marginBottom="20dp"
+                    android:text="회원가입"
+                    android:textSize="17dp"
+                    android:textColor="@color/black"
+>>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:background="@drawable/bg_button"
                     android:text="회원가입"
                     android:textColor="@color/black"
