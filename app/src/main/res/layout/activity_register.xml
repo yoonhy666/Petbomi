@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,11 +14,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPrimary"/>
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimary"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -61,11 +61,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
-<<<<<<< HEAD
-                    android:layout_marginTop="30dp"
-=======
                     android:layout_marginTop="45dp"
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:text="아이디/비밀번호 입력"
                     android:textColor="@color/black"
                     android:textSize="19dp"
@@ -88,16 +84,15 @@
                     tools:ignore="InvalidId">
 
                 </EditText>
-
                 <EditText
                     android:id="@+id/passwordText"
+                    android:inputType="textPassword"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_edit"
                     android:hint="비밀번호를 입력하세요."
-                    android:inputType="textPassword"
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
@@ -105,32 +100,26 @@
                     tools:ignore="InvalidId">
 
                 </EditText>
-
                 <EditText
                     android:id="@+id/passwordText_re"
+                    android:inputType="textPassword"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_edit"
                     android:hint="비밀번호 재입력"
-                    android:inputType="textPassword"
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#B5B5B5"
-                    tools:ignore="InvalidId"></EditText>
-
+                    tools:ignore="InvalidId">
+                </EditText>
                 <ImageView
+                    android:src="@drawable/line"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-<<<<<<< HEAD
-                    android:layout_margin="20dp"
-                    android:src="@drawable/line" />
-
-=======
                     android:layout_margin="30dp"/>
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -142,23 +131,6 @@
                     android:textStyle="bold"
 
                     />
-
-                <ImageView
-                    android:id="@+id/profile"
-                    style="?android:borderlessButtonStyle"
-                    android:layout_width="88dp"
-                    android:layout_height="88dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:src="@drawable/camerabtn" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
-                    android:text="프로필을 선택하세요."
-                    android:textColor="#B5B5B5" />
 
                 <EditText
                     android:id="@+id/name"
@@ -177,25 +149,20 @@
                 </EditText>
 
                 <EditText
-<<<<<<< HEAD
-                    android:id="@+id/phnum"
-=======
                     android:id="@+id/phone"
                     android:inputType="phone"
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_edit"
                     android:hint="휴대폰 번호"
-                    android:inputType="phone"
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#B5B5B5"
-                    tools:ignore="InvalidId"></EditText>
-
+                    tools:ignore="InvalidId">
+                </EditText>
                 <EditText
                     android:id="@+id/nickname"
 
@@ -209,8 +176,8 @@
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#B5B5B5"
-                    tools:ignore="InvalidId"></EditText>
-
+                    tools:ignore="InvalidId">
+                </EditText>
                 <EditText
                     android:id="@+id/birth"
                     android:layout_width="350dp"
@@ -218,26 +185,16 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_edit"
-<<<<<<< HEAD
-                    android:clickable="true"
-                    android:editable="false"
-                    android:focusable="false"
-=======
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:hint="생년월일"
                     android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#B5B5B5"
-<<<<<<< HEAD
-                    tools:ignore="Deprecated"></EditText>
-=======
                     tools:ignore="Deprecated,InvalidId"
                     android:clickable="true"
                     android:editable="false"
                     android:focusable="false">
                 </EditText>
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
 
                 <TextView
                     android:layout_width="200dp"
@@ -268,11 +225,7 @@
                 </EditText>
 
                 <RadioGroup
-<<<<<<< HEAD
-                    android:id="@+id/kind"
-=======
                     android:id="@+id/petkind"
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -304,11 +257,7 @@
                 </RadioGroup>
 
                 <RadioGroup
-<<<<<<< HEAD
-                    android:id="@+id/gender"
-=======
                     android:id="@+id/petgender"
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -355,10 +304,6 @@
 
                 </EditText>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -378,8 +323,6 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="25dp"
                     android:background="@drawable/bg_edit"
-                    android:clickable="true"
-                    android:focusable="false"
                     android:hint="주소"
                     android:minHeight="48dp"
                     android:padding="10dp"
@@ -390,6 +333,8 @@
                 </EditText>
 
                 <EditText
+
+
                     android:id="@+id/et_address2"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
@@ -423,47 +368,22 @@
                     tools:ignore="InvalidId"/>
 
                 <ImageView
+                    android:src="@drawable/line"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:layout_margin="20dp"
-                    android:src="@drawable/line" />
-
-                <EditText
-                    android:id="@+id/etc"
-                    android:layout_width="350dp"
-                    android:layout_height="218dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/bg_edit"
-                    android:hint="참고사항 입력"
-                    android:scrollbars="vertical"
-                    android:inputType="text|textMultiLine"
-                    android:lines="20"
-                    android:minHeight="48dp"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="#B5B5B5"
-                    tools:ignore="InvalidId">
-
-                </EditText>
+                    android:layout_margin="20dp"/>
 
                 <Button
                     android:id="@+id/signUpButton"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-<<<<<<< HEAD
-                    android:layout_margin="20dp"
-=======
                     android:layout_marginBottom="20dp"
                     android:text="회원가입"
                     android:textSize="17dp"
                     android:textColor="@color/black"
->>>>>>> 94f72d1d960effa481a53827ebcfbeccc78b5754
                     android:background="@drawable/bg_button"
-                    android:text="회원가입"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    />
 
 
             </LinearLayout>
