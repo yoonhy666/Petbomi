@@ -126,7 +126,7 @@
                 android:textStyle="bold"
                 android:focusable="false"
                 android:minHeight="48dp"
-                android:onClick="onClick"
+
                 android:text="회원가입"
                 android:textSize="17dp" />
 

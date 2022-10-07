@@ -48,17 +48,18 @@
 
         </FrameLayout>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="200dp"
-                android:src="@drawable/complete"
-                app:layout_constraintTop_toBottomOf="@+id/view" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/complete"
+             />
 
             <TextView
                android:textColor="@color/black"
@@ -72,7 +73,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/login"
                 android:layout_width="318dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
@@ -82,19 +83,12 @@
                 android:text="로그인 하러 가기"
                 android:textSize="17dp"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                 />
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
-
-
-        </LinearLayout>
 
 
 

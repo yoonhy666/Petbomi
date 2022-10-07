@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        findViewById(R.id.loginbtn).setOnClickListener(onClickListener);
         mAuth=FirebaseAuth.getInstance();
 
         TextView text=(TextView) findViewById(R.id.registerButton);
@@ -89,14 +89,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if(email.length() > 0 && password.length() > 0){
-            if (password.equals(passwordCheck)) {
+            if (email.length()>0&&password.length()>0) {
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    startToast("회원가입에 성공하셨습니다.");
+                                    startToast("로그인에 성공하셨습니다.");
                                     //ui
                                 } else {
                                     if(task.getException()!=null){
