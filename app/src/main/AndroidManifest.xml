@@ -17,23 +17,9 @@
         android:theme="@style/Theme.Petbomi"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".PayActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BookingActivity3"
-            android:exported="false" />
-        <activity
-            android:name=".BookingActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".BookingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
+        <activity android:name=".MainActivity">
 
-        <activity android:name=".MainActivity" />
+        </activity>
         <activity android:name=".SearchActivity" />
 
         <meta-data
@@ -44,19 +30,19 @@
             android:name=".RegisterActivity"
             android:exported="true"
             android:usesCleartextTraffic="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="google.com"
-                    android:scheme="http" />
+                    android:scheme="http"
+                    android:host="google.com" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -65,8 +51,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="google.com"
-                    android:scheme="http" />
+                    android:scheme="http"
+                    android:host="google.com" />
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />

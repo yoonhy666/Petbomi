@@ -21,7 +21,7 @@ public class SearchActivity extends AppCompatActivity {
         webView.setWebViewClient((new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
-                webView.loadUrl("javascript:sample2_execDaumPostcode()");
+                webView.loadUrl("javascript:sample2_execDaumPostcode();");
             }
         }));
             webView.loadUrl("https://mapsearch-40c6d.web.app");
