@@ -15,12 +15,12 @@ public class Register_fin extends AppCompatActivity {
         setContentView(R.layout.activity_register_fin);
 
 
-        Button button=(Button) findViewById(R.id.login);
+        Button button=(Button) findViewById(R.id.go_login);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
+                Intent intent=new Intent(Register_fin.this,LoginActivity.class);
                 startActivity(intent);
             }
         });

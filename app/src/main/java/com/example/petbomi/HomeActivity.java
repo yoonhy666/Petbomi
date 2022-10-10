@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeActivity extends AppCompatActivity {
 
     private Button find;
@@ -15,6 +17,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        if(FirebaseAuth.getInstance().getCurrentUser()==null){
+            startSignUpActivity();
+        }
 
         //find버튼 클릭
         find = findViewById(R.id.find);
@@ -25,5 +31,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    private void startSignUpActivity(){
+        Intent intent =new Intent(this,RegisterActivity.class);
+        startActivity(intent);
     }
 }

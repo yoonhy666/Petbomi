@@ -3,9 +3,10 @@ package com.example.petbomi;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.EditText;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
@@ -20,6 +21,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,13 +29,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import static com.example.petbomi.Util.showToast;
+
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private static final String TAG="RegisterActivity";
+
     private EditText mEtAddress;
     private FirebaseAuth mAuth;
+
 
     Calendar calendar=Calendar.getInstance();
     DatePickerDialog.OnDateSetListener datepicker=new DatePickerDialog.OnDateSetListener() {
@@ -52,6 +55,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
 
         EditText et_Date = (EditText) findViewById(R.id.birth);
@@ -112,6 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                     SignUp();
 
                     break;
+
             }
 
         }
@@ -145,7 +153,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     startToast("회원가입에 성공하셨습니다.");
-                                    //ui
+                                    startActivity();
+
                                 } else {
                                     if(task.getException()!=null){
                                         startToast(task.getException().toString());
@@ -169,4 +178,21 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
+    private void startActivity() {
+        Intent intent=new Intent(this,Register_fin.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

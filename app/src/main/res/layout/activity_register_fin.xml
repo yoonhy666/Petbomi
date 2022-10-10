@@ -11,42 +11,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <View
-                android:id="@+id/view"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@color/colorPrimary" />
+        <androidx.appcompat.widget.Toolbar
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:text="가입완료"
+                android:textStyle="bold"
+                android:textColor="@color/black"
 
+                >
 
+            </TextView>
 
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="165dp"
-                    android:layout_marginTop="20dp"
-
-                    android:text="가입 완료"
-                    android:textColor="@color/black"
-                    android:textSize="17dp"
-                    android:textStyle="bold"
-
-
-                    tools:ignore="TouchTargetSizeCheck" />
-
-
-            </LinearLayout>
-
-
-        </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
 
 
         <LinearLayout
@@ -73,7 +58,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <Button
-                android:id="@+id/login"
+                android:id="@+id/go_login"
                 android:layout_width="318dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"

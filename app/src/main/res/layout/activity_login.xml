@@ -6,54 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="로그인"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
+          >
+
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginTop="24dp"
         >
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <View
-                android:id="@+id/view"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@color/colorPrimary" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/backbtn"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="27dp"
-                    android:src="@drawable/backicon"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
-                    android:layout_marginTop="23dp"
-
-                    android:text="로그인"
-                    android:textColor="@color/black"
-                    android:textSize="17dp"
-                    android:textStyle="bold"
-
-
-                    tools:ignore="TouchTargetSizeCheck" />
-
-
-            </LinearLayout>
-
-
-        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,7 +56,7 @@
                 />
 
             <EditText
-                android:id="@+id/emailText"
+                android:id="@+id/emailEditText"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -89,7 +71,7 @@
 
             </EditText>
             <EditText
-                android:id="@+id/passwordText"
+                android:id="@+id/passwordEditText"
                 android:inputType="textPassword"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"

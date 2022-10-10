@@ -49,7 +49,8 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="35dp"
                             android:layout_marginBottom="20dp"
-                            android:background="@drawable/find" />
+                            android:background="@drawable/find"
+                            tools:ignore="SpeakableTextPresentCheck" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -73,7 +74,8 @@
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="190dp"
                                 android:layout_marginTop="14.5dp"
-                                app:srcCompat="@drawable/go_review" />
+                                app:srcCompat="@drawable/go_review"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                         </LinearLayout>
 
                         <ImageView
@@ -160,7 +162,8 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="38dp"
                 android:layout_marginTop="13dp"
-                app:srcCompat="@drawable/home" />
+                app:srcCompat="@drawable/home"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/Booking"
@@ -169,7 +172,8 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="38dp"
                 android:layout_marginTop="12dp"
-                app:srcCompat="@drawable/reservation" />
+                app:srcCompat="@drawable/reservation"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/review"
@@ -178,7 +182,8 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="38dp"
                 android:layout_marginTop="12dp"
-                app:srcCompat="@drawable/review" />
+                app:srcCompat="@drawable/review"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/mypage"
@@ -187,7 +192,8 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="38dp"
                 android:layout_marginTop="12dp"
-                app:srcCompat="@drawable/mypage" />
+                app:srcCompat="@drawable/mypage"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
