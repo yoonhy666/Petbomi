@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Petbomi"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".BookingActivity1"
+            android:exported="false" />
 
         <meta-data
             android:name="android.app.lib_name"
@@ -26,31 +29,29 @@
             android:name=".MainActivity"
             android:exported="true"
             android:usesCleartextTraffic="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
-                    android:host="google.com" />
+                    android:host="google.com"
+                    android:scheme="http" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".BookingActivity"></activity>
-        <activity android:name=".BookingActivity2"></activity>
-        <activity android:name=".BookingActivity3"></activity>
-        <activity android:name=".PayActivity"></activity>
-
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".BookingActivity" />
+        <activity android:name=".BookingActivity2" />
+        <activity android:name=".BookingActivity3" />
+        <activity android:name=".PayActivity" />
     </application>
 
 </manifest>

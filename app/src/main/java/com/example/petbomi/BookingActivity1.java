@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class BookingActivity extends AppCompatActivity {
+public class BookingActivity1 extends AppCompatActivity {
 
     private ImageButton backbtn;
     private Button find2;
@@ -16,14 +16,14 @@ public class BookingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booking);
+        setContentView(R.layout.activity_booking1);
 
         //backbtn버튼 클릭
         backbtn = findViewById(R.id.backbtn);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookingActivity.this, HomeActivity.class);
+                Intent intent = new Intent(BookingActivity1.this, BookingActivity.class);
                 startActivity(intent);
             }
         });
@@ -33,7 +33,7 @@ public class BookingActivity extends AppCompatActivity {
         find2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookingActivity.this, BookingActivity1.class);
+                Intent intent = new Intent(BookingActivity1.this, BookingActivity2.class);
                 startActivity(intent);
             }
         });

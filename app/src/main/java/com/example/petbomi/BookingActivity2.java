@@ -33,7 +33,7 @@ public class BookingActivity2 extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookingActivity2.this, BookingActivity.class);
+                Intent intent = new Intent(BookingActivity2.this, BookingActivity1.class);
                 startActivity(intent);
             }
         });
