@@ -71,10 +71,10 @@
 
                     <RadioButton
                         android:id="@+id/radioButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="175dp"
+                        android:layout_height="48dp"
                         android:layout_marginRight="9dp"
-                        android:background="@drawable/b5"
+                        android:background="@drawable/radio_button"
                         android:button="@null"
                         android:text="24일 PM 12:00"
                         android:textAlignment="center"
@@ -83,9 +83,9 @@
 
                     <RadioButton
                         android:id="@+id/radioButton2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/b5"
+                        android:layout_width="175dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/radio_button"
                         android:button="@null"
                         android:text="24일 PM 17:00"
                         android:textAlignment="center"

@@ -54,93 +54,109 @@
 
                 </FrameLayout>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="28dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="산책"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="발 닦기"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="실내 놀이"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="사료 및 간식 배식"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="그릇 세척"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="모래 청소"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="배변패드 교체"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
-                <Button
+                <CheckBox
                     android:id="@+id/option8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="18dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/b3"
+                    android:button="@null"
                     android:text="+ 목욕 (비용 추가)"
+                    android:textSize="16dp"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/option_button"/>
 
                 <ImageView
                     android:id="@+id/line2"

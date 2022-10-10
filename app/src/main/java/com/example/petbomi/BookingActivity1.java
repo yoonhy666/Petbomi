@@ -12,6 +12,7 @@ public class BookingActivity1 extends AppCompatActivity {
 
     private ImageButton backbtn;
     private Button find2;
+    private Button option1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,5 +38,15 @@ public class BookingActivity1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        option1 = findViewById(R.id.option1);
+        option1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 }
