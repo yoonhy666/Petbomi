@@ -7,11 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
     private Button find;
+    ImageSlider imageSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +36,19 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //banner
+        imageSlider = findViewById(R.id.image_slider);
+
+        ArrayList<SlideModel> images = new ArrayList<>();
+        images.add(new SlideModel(R.drawable.banner1, null));
+        images.add(new SlideModel(R.drawable.banner2, null));
+
+        imageSlider.setImageList(images);
     }
     private void startSignUpActivity(){
         Intent intent =new Intent(this,RegisterActivity.class);
         startActivity(intent);
     }
+
 }

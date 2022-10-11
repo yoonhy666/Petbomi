@@ -25,12 +25,14 @@
                 android:background="@drawable/back_color"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/banner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/image_slider"
+                    android:layout_width="310dp"
+                    android:layout_height="107dp"
                     android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/banner1" />
+                    android:layout_gravity="center"
+                    app:iss_auto_cycle="true"
+                    app:iss_period="3000" />
 
                 <FrameLayout
                     android:layout_width="match_parent"
