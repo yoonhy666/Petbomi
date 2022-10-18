@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 public class HomeActivity extends AppCompatActivity {
 
     private Button find;
+    private ImageButton review;
     ImageSlider imageSlider;
 
     @Override
@@ -33,6 +35,16 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, BookingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //review버튼 클릭
+        review = findViewById(R.id.review);
+        review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
                 startActivity(intent);
             }
         });

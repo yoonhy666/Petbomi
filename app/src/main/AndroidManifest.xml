@@ -18,6 +18,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".WriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewActivity_detail"
+            android:exported="false" />
+        <activity
+            android:name=".Booking_fin"
+            android:exported="false" />
+        <activity
             android:name=".BookingActivity1"
             android:exported="false" />
 
