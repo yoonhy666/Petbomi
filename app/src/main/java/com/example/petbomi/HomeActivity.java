@@ -18,6 +18,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button find;
     private ImageButton review;
+    private ImageButton go_calender;
+    private ImageButton go_review;
     ImageSlider imageSlider;
 
     @Override
@@ -42,6 +44,26 @@ public class HomeActivity extends AppCompatActivity {
         //review버튼 클릭
         review = findViewById(R.id.review);
         review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //go_calender버튼 클릭
+        go_calender = findViewById(R.id.go_calender);
+        go_calender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ScheduleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //go_reviewr버튼 클릭
+        go_review = findViewById(R.id.go_review);
+        go_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
