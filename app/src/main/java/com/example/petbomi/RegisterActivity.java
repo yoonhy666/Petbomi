@@ -28,7 +28,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -36,6 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText mEtAddress;
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabaseRef;
 
 
     Calendar calendar=Calendar.getInstance();
@@ -54,6 +56,9 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        mAuth=FirebaseAuth.getInstance();
+        mDatabaseRef= FirebaseDatabase.getInstance().getReference("petbomi");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -152,6 +157,24 @@ public class RegisterActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    UserAccount account=new UserAccount();
+                                    account.setIdToken(user.getUid());
+                                    account.setEmail(user.getEmail());
+                                    account.setPassword(password);
+                                    account.setPasswordCheck(passwordCheck);
+                                    account.setName(name);
+                                    account.setPhone(phone);
+                                    account.setNickname(nickname);
+                                    account.setBirth(birth);
+                                    account.setPetname(petname);
+                                    account.setKind(kind);
+                                    account.setGender(gender);
+                                    account.setPetage(petage);
+                                    account.setAddress(address);
+                                    account.setAddress2(address2);
+                                    account.setEtc(etc);
+
+                                    mDatabaseRef.child("UserAccount").child(user.getUid()).setValue(account);
                                     startToast("회원가입에 성공하셨습니다.");
                                     startActivity();
 
