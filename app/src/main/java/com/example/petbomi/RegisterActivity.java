@@ -156,8 +156,10 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    FirebaseUser user = mAuth.getCurrentUser();
+
+                                    FirebaseUser user=task.getResult().getUser();
                                     UserAccount account=new UserAccount();
+
                                     account.setIdToken(user.getUid());
                                     account.setEmail(user.getEmail());
                                     account.setPassword(password);
