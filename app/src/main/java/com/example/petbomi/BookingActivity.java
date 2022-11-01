@@ -24,8 +24,7 @@ public class BookingActivity extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookingActivity.this, HomeActivity.class);
-                startActivity(intent);
+               finish();
             }
         });
 
@@ -39,15 +38,5 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
 
-    }
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

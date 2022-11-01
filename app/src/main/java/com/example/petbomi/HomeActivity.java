@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton review;
     private ImageButton go_calender;
     private ImageButton go_review;
+
     ImageSlider imageSlider;
 
     @Override
@@ -36,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         find.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, BookingActivity.class);
+                Intent intent = new Intent(HomeActivity.this, LocationActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,6 +71,8 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
         //banner
         imageSlider = findViewById(R.id.image_slider);

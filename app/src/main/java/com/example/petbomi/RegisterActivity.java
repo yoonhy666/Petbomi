@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -38,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEtAddress;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabaseRef;
-
+    private ImageButton backbtn;
 
     Calendar calendar=Calendar.getInstance();
     DatePickerDialog.OnDateSetListener datepicker=new DatePickerDialog.OnDateSetListener() {
@@ -60,10 +61,14 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         mDatabaseRef= FirebaseDatabase.getInstance().getReference("petbomi");
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        backbtn = findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
 
         EditText et_Date = (EditText) findViewById(R.id.birth);
@@ -204,7 +209,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
     private void startActivity() {
-        Intent intent=new Intent(this,Register_fin.class);
+        Intent intent=new Intent(this, RegisterFinalActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
