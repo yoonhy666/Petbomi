@@ -213,6 +213,7 @@ public class GeoTrans {
         outpt_y = r2d(outpt_y);
     }
 
+
     static double e0fn(double x) {
         return 1.0 - 0.25 * x * (1.0 + x / 16.0 * (3.0 + 1.25 * x));
     }

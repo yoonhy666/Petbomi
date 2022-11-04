@@ -42,7 +42,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
 
         holder.item_name.setText(arrayList.get(position).getName());
         holder.item_addr.setText(arrayList.get(position).getAddr());
-
     }
 
     @Override

@@ -4,7 +4,6 @@ public class User {
     private String profile;
     private String name;
     private String addr;
-
     public User(){}
 
     public String getProfile() {

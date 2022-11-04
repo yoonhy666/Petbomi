@@ -56,6 +56,7 @@ public class LocationActivity extends AppCompatActivity {
         marker2.setTag(0);
 
 
+
         //  (클릭 전)기본으로 제공하는 BluePin 마커 모양의 색.
         marker1.setMarkerType(MapPOIItem.MarkerType.BluePin);
         marker2.setMarkerType(MapPOIItem.MarkerType.BluePin);

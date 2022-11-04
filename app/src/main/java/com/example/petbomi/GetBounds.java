@@ -22,6 +22,7 @@ public class GetBounds {
         maxY = ptY;
     }
 
+
     public double getMinX() {
         return minX;
     }
