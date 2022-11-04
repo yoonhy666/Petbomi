@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_sheet_background">
     <View
         android:id="@+id/line1"
         android:layout_width="30dp"
@@ -21,7 +22,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="돌보미 탐색"
         android:textColor="@color/black"
@@ -36,7 +37,7 @@
         android:id="@+id/LineView"
         android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="#CCCCCC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
