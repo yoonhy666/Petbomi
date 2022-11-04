@@ -25,6 +25,7 @@ public class LocationActivity extends AppCompatActivity {
         mapViewContainer.addView(mapView);
 
 
+
         // 중심점 변경 - 배화여자대학교
         mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.57920988530214, 126.96589003358444), true);
 
