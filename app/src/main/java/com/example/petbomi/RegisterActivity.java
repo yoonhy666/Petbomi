@@ -31,6 +31,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -39,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEtAddress;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabaseRef;
+    private FirebaseFirestore mStore = FirebaseFirestore.getInstance(); //add
     private ImageButton backbtn;
 
     Calendar calendar=Calendar.getInstance();
@@ -182,6 +185,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     account.setEtc(etc);
 
                                     mDatabaseRef.child("UserAccount").child(user.getUid()).setValue(account);
+                                    mStore.collection("user").document(user.getUid()).set(account, SetOptions.merge());
                                     startToast("회원가입에 성공하셨습니다.");
                                     startActivity();
 

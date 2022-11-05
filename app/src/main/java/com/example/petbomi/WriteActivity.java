@@ -26,8 +26,8 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private RatingBar mScore;
     private EditText mComment;
-    private EditText mNickname;
 
+    private String nickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
 
         mScore = findViewById(R.id.write_score);
         mComment = findViewById(R.id.write_comment);
-        mNickname = findViewById(R.id.write_nickname);
 
         mScore.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -46,18 +45,18 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
 
         findViewById(R.id.savebtn).setOnClickListener(this);
 
-//        if (mAuth.getCurrentUser() != null) {
-//            mStore.collection("nickname").document(mAuth.getCurrentUser().getUid())
-//                   .get()
-//                   .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                            if (task.getResult() != null) {
-//                                nickname = (String) task.getResult().getData().get("nickname");
-//                            }
-//                        }
-//                    });
-//        }
+        if (mAuth.getCurrentUser() != null) {
+            mStore.collection("user").document(mAuth.getCurrentUser().getUid())
+                   .get()
+                   .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.getResult() != null) {
+                                nickname = (String) task.getResult().getData().get("nickname");
+                            }
+                        }
+                    });
+        }
     }
 
 
@@ -69,7 +68,7 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
             data.put("documentId", mAuth.getCurrentUser().getUid());
             data.put("score", mScore.getRating());
             data.put("comment", mComment.getText().toString());
-            data.put("nickname", mNickname.getText().toString());
+            data.put("nickname", nickname);
             data.put("timestamp", FieldValue.serverTimestamp());
             mStore.collection("review").document(reviewId).set(data, SetOptions.merge());
             finish();

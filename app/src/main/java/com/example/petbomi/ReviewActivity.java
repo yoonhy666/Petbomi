@@ -16,7 +16,10 @@ import android.widget.ImageButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -25,6 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.auth.User;
 
 import org.w3c.dom.Comment;
 
@@ -41,6 +45,7 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
     private List<Review> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +56,6 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
         mReviewRecyclerView.setLayoutManager(layoutManager);
         mReviewRecyclerView.setHasFixedSize(true);
         findViewById(R.id.writebtn).setOnClickListener(this);
-
     }
 
 
@@ -68,10 +72,10 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
                             mDatas.clear();
                             for (DocumentSnapshot snap : queryDocumentSnapshots.getDocuments()) {
                                 Map<String, Object> shot = snap.getData();
+                                String nickname = valueOf(shot.get("nickname"));
                                 String documentId = valueOf(shot.get("documentId"));
                                 float score = Float.parseFloat(shot.get("score").toString());
                                 String comment = valueOf(shot.get("comment"));
-                                String nickname = valueOf(shot.get("nickname"));
                                 Review data = new Review(nickname, documentId, score, comment);
                                 mDatas.add(data);
 

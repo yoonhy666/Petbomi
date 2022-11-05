@@ -78,16 +78,16 @@
             android:layout_marginTop="9.5dp"
             app:srcCompat="@drawable/line4" />
 
-        <EditText
-            android:id="@+id/write_nickname"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:hint="  닉네임을 적어주세요."
-            android:textColor="#868686"
-            android:textSize="15dp"
-            android:background="@drawable/b3"/>
+<!--        <EditText-->
+<!--            android:id="@+id/write_nickname"-->
+<!--            android:layout_width="330dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:hint="  닉네임을 적어주세요."-->
+<!--            android:textColor="#868686"-->
+<!--            android:textSize="15dp"-->
+<!--            android:background="@drawable/b3"/>-->
 
         <EditText
             android:id="@+id/write_comment"

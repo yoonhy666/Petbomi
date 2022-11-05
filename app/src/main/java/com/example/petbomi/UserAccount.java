@@ -12,7 +12,7 @@ public class UserAccount {
     private String passwordCheck ;
     private String name ;
     private String phone ;
-    private  String nickname ;
+    private String nickname ;
     private String birth ;
     private String petname ;
     private String kind ;
