@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="318dp"
-    android:layout_height="170dp"
+    android:layout_height="145dp"
     app:cardCornerRadius="16dp"
     android:layout_margin="5dp"
     app:cardElevation="5dp"
@@ -27,13 +27,13 @@
             android:textColor="#4E4D4D"
             android:textStyle="bold"
             android:layout_marginLeft="45dp"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="20dp" />
 
         <RatingBar
             android:id="@+id/home_score"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="22dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:isIndicator="false"
@@ -47,7 +47,7 @@
             android:id="@+id/home_comment"
             android:layout_gravity="center"
             android:layout_width="230dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
 
             android:layout_marginTop="15dp"
             android:ellipsize="end"

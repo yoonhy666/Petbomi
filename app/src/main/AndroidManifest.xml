@@ -8,6 +8,7 @@
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="whateverString"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -16,15 +17,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Petbomi"
         android:usesCleartextTraffic="true"
-
-        tools:targetApi="31"
         tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString">
+        tools:targetApi="31">
         <activity
-            android:name=".LocationActivity" />
-
-
-
+            android:name=".MypageActivityDetail"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MypageActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".LocationActivity" />
         <activity
             android:name=".ScheduleActivity"
             android:exported="false" />
@@ -33,15 +42,14 @@
             android:exported="false" />
         <activity
             android:name=".ReviewActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ReviewActivity_detail"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Booking_fin"
             android:exported="false" />
         <activity android:name=".BookingActivity1" />
-
 
         <meta-data
             android:name="android.app.lib_name"
@@ -50,8 +58,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:usesCleartextTraffic="true"
-            >
+            android:usesCleartextTraffic="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,8 +75,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity"
-            />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".BookingActivity" />
@@ -78,11 +84,9 @@
         <activity android:name=".PayActivity" />
         <activity android:name=".RegisterFinalActivity" />
 
-
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="06k6loak11" />
-
     </application>
 
 </manifest>

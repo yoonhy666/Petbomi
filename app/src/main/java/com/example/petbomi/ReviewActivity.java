@@ -2,7 +2,6 @@ package com.example.petbomi;
 
 import static java.lang.String.valueOf;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,29 +12,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.auth.User;
 
-import org.w3c.dom.Comment;
-
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+import java.util.TimeZone;
 
 public class ReviewActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +32,8 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
     private ReviewAdapter mAdapter;
     private List<Review> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
-
+    private ImageButton backbtn;
+    private ImageButton home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +45,27 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
         mReviewRecyclerView.setLayoutManager(layoutManager);
         mReviewRecyclerView.setHasFixedSize(true);
         findViewById(R.id.writebtn).setOnClickListener(this);
+
+        //backbtn
+        backbtn = findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReviewActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //homebtn
+        home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReviewActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

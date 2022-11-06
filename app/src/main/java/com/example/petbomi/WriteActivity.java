@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,8 +27,8 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private RatingBar mScore;
     private EditText mComment;
-
     private String nickname;
+    private ImageButton backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,16 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
                         }
                     });
         }
+
+        //backbtn
+        backbtn = findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WriteActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
