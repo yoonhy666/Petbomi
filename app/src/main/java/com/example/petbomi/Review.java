@@ -2,7 +2,9 @@ package com.example.petbomi;
 
 import com.google.firebase.firestore.ServerTimestamp;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Review {
 
@@ -13,7 +15,8 @@ public class Review {
     @ServerTimestamp
     private Date date;
 
-    public Review() {
+    private Review() {
+
     }
 
     public Review(String nickname, String documentId, float score, String comment) {

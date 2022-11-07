@@ -24,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button find;
     private ImageButton review;
     private ImageButton go_review;
+    private ImageButton mypage;
     private LinearLayoutManager layoutManager;
     private RecyclerView mHomeRecyclerView;
     private HomeReviewAdapter mAdapter;
@@ -79,6 +81,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //mypage버튼 클릭
+        mypage = findViewById(R.id.mypage);
+        mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, MypageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         //go_reviewr버튼 클릭
         go_review = findViewById(R.id.go_review);
         go_review.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +106,8 @@ public class HomeActivity extends AppCompatActivity {
         imageSlider= findViewById(R.id.image_slider);
 
         ArrayList<SlideModel> images = new ArrayList<>();
-        images.add(new SlideModel(R.drawable.banner2, null));
         images.add(new SlideModel(R.drawable.banner1, null));
+        images.add(new SlideModel(R.drawable.banner2, null));
 
         imageSlider.setImageList(images);
 
@@ -103,8 +116,8 @@ public class HomeActivity extends AppCompatActivity {
         imageSlider2 = findViewById(R.id.image_slider2);
 
         ArrayList<SlideModel> images2 = new ArrayList<>();
-        images2.add(new SlideModel(R.drawable.banner1, null));
-        images2.add(new SlideModel(R.drawable.banner2, null));
+        images2.add(new SlideModel(R.drawable.home_banner2, null));
+        images2.add(new SlideModel(R.drawable.home_banner1, null));
 
         imageSlider2.setImageList(images2);
 
@@ -129,10 +142,10 @@ public class HomeActivity extends AppCompatActivity {
                             mDatas.clear();
                             for (DocumentSnapshot snap : queryDocumentSnapshots.getDocuments()) {
                                 Map<String, Object> shot = snap.getData();
+                                String nickname = valueOf(shot.get("nickname"));
                                 String documentId = valueOf(shot.get("documentId"));
                                 float score = Float.parseFloat(shot.get("score").toString());
                                 String comment = valueOf(shot.get("comment"));
-                                String nickname = valueOf(shot.get("nickname"));
                                 Review data = new Review(nickname, documentId, score, comment);
                                 mDatas.add(data);
 

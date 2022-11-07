@@ -83,7 +83,7 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginTop="25dp"
+                                android:layout_marginTop="20dp"
                                 android:layout_gravity="center">
 
                                 <androidx.recyclerview.widget.RecyclerView
@@ -113,7 +113,7 @@
 
                         <com.denzcoskun.imageslider.ImageSlider
                             android:id="@+id/image_slider2"
-                            android:layout_width="360dp"
+                            android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_marginTop="35dp"
                             android:layout_gravity="center"

@@ -39,6 +39,14 @@
                 android:rating="0"
                 android:stepSize="10" />
 
+<!--            <TextView-->
+<!--                android:id="@+id/review_date"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginLeft="190dp"-->
+<!--                android:textSize="14dp" />-->
+
         </LinearLayout>
 
         <TextView
