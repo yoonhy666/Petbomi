@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.petbomi">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -20,10 +22,12 @@
         tools:targetApi="31"
         tools:replace="android:appComponentFactory"
         android:appComponentFactory="whateverString">
+
         <activity
             android:name=".LocationActivity" />
-
-
+        <activity
+            android:name=".LocationSheet"
+            android:exported="false" />
 
         <activity
             android:name=".ScheduleActivity"
@@ -40,7 +44,6 @@
         <activity
             android:name=".Booking_fin"
             android:exported="false" />
-        <activity android:name=".BookingActivity1" />
 
 
         <meta-data
@@ -73,15 +76,14 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".BookingActivity" />
-        <activity android:name=".BookingActivity2" />
-        <activity android:name=".BookingActivity3" />
         <activity android:name=".PayActivity" />
         <activity android:name=".RegisterFinalActivity" />
 
 
-        <meta-data
-            android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="06k6loak11" />
+
+
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="363c0bcfa0fdf1eb18462541b3a59964"/>
 
     </application>
 

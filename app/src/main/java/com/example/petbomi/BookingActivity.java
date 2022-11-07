@@ -33,7 +33,7 @@ public class BookingActivity extends AppCompatActivity {
         find2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookingActivity.this, BookingActivity1.class);
+                Intent intent = new Intent(BookingActivity.this, Booking_fin.class);
                 startActivity(intent);
             }
         });

@@ -3,7 +3,10 @@ package com.example.petbomi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
@@ -18,6 +21,7 @@ public class LocationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
 
         MapView mapView = new MapView(this);
 
@@ -55,7 +59,8 @@ public class LocationActivity extends AppCompatActivity {
         marker1.setTag(0);
         marker2.setTag(0);
 
-
+        marker1.setMapPoint(MARKER_POINT1);
+        marker2.setMapPoint(MARKER_POINT2);
 
         //  (클릭 전)기본으로 제공하는 BluePin 마커 모양의 색.
         marker1.setMarkerType(MapPOIItem.MarkerType.BluePin);
@@ -63,7 +68,7 @@ public class LocationActivity extends AppCompatActivity {
 
         // (클릭 후) 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
         marker1.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
-        marker1.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
+        marker2.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
 
         // 지도화면 위에 추가되는 아이콘을 추가하기 위한 호출(말풍선 모양)
         mapView.addPOIItem(marker1);
