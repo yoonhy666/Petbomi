@@ -57,6 +57,7 @@ public class LocationSheet extends AppCompatActivity {
             }
         });
 
+
         adapter = new UserAdapter(arrayList,this);
         recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 

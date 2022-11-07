@@ -72,6 +72,7 @@ public class LocationActivity extends AppCompatActivity {
 
         // 지도화면 위에 추가되는 아이콘을 추가하기 위한 호출(말풍선 모양)
         mapView.addPOIItem(marker1);
+
         mapView.addPOIItem(marker2);
 
     }

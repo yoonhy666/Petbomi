@@ -54,6 +54,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
         ImageView item_profile;
         TextView item_name;
         TextView item_addr;
+
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.item_profile=itemView.findViewById(R.id.item_profile);

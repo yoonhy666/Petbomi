@@ -6,6 +6,7 @@ public class User {
     private String addr;
     public User(){}
 
+
     public String getProfile() {
         return profile;
     }
