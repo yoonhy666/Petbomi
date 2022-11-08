@@ -26,7 +26,8 @@
         app:behavior_peekHeight="70dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
         <!-- 생략 -->
-        <include layout="@layout/location_sheet" />
+        <include layout="@layout/location_sheet"
+            android:id="@+id/bottomsheet"/>
     </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

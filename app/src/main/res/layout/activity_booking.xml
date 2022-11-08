@@ -187,7 +187,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="14dp"
                     android:background="@drawable/b2"
-                    android:text="돌보미 찾기"
+                    android:text="선택 완료"
                     android:textColor="#1F1F1F"
                     android:textSize="16dp"
                     android:textStyle="bold"

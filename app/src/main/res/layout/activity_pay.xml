@@ -6,21 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PayActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -43,7 +29,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="11dp"
-                                app:srcCompat="@drawable/backbtn" />
+                                app:srcCompat="@drawable/backbtn"
+                                tools:ignore="SpeakableTextPresentCheck" />
 
                             <TextView
                                 android:id="@+id/textView"
@@ -58,7 +45,10 @@
                         </LinearLayout>
 
                     </FrameLayout>
-
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -88,7 +78,8 @@
                                 android:layout_height="23dp"
                                 android:layout_marginTop="23dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/arrow" />
+                                app:srcCompat="@drawable/arrow"
+                                tools:ignore="SpeakableTextPresentCheck" />
                         </LinearLayout>
 
                         <ImageView
@@ -124,7 +115,8 @@
                                 android:layout_height="23dp"
                                 android:layout_marginTop="23dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/arrow" />
+                                app:srcCompat="@drawable/arrow"
+                                tools:ignore="SpeakableTextPresentCheck" />
                         </LinearLayout>
 
                         <ImageView
@@ -157,9 +149,10 @@
                                 style="?android:borderlessButtonStyle"
                                 android:layout_width="245dp"
                                 android:layout_height="32dp"
-                                android:layout_marginTop="19dp"
                                 android:layout_marginLeft="45dp"
-                                app:srcCompat="@drawable/couponbox" />
+                                android:layout_marginTop="19dp"
+                                app:srcCompat="@drawable/couponbox"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
                         </LinearLayout>
@@ -184,20 +177,22 @@
                                 android:id="@+id/pointbox"
                                 android:layout_width="193dp"
                                 android:layout_height="32dp"
-                                android:layout_marginTop="19dp"
                                 android:layout_marginLeft="30dp"
-                                app:srcCompat="@drawable/pointbox" />
+                                android:layout_marginTop="19dp"
+                                app:srcCompat="@drawable/pointbox"
+                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                             <Button
                                 android:id="@+id/usebox"
                                 style="?android:borderlessButtonStyle"
                                 android:layout_width="47dp"
                                 android:layout_height="34dp"
-                                android:layout_marginTop="19dp"
                                 android:layout_marginLeft="5dp"
+                                android:layout_marginTop="19dp"
+                                android:background="@drawable/usebox"
                                 android:text="사용"
                                 android:textSize="12dp"
-                                android:background="@drawable/usebox" />
+                                tools:ignore="TouchTargetSizeCheck" />
 
 
                         </LinearLayout>
@@ -407,32 +402,33 @@
                                 android:textStyle="bold" />
 
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/b1"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/Pay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="14dp"
+                                android:background="@drawable/b2"
+                                android:text="55,000원 결제하기"
+                                android:textColor="#1F1F1F"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
                     </LinearLayout>
-                </LinearLayout>
 
-            </LinearLayout>
+
+
 
         </ScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/b1"
-            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/Pay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/b2"
-                android:text="55,000원 결제하기"
-                android:textColor="#1F1F1F"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-        </LinearLayout>
 
     </LinearLayout>
 
