@@ -52,6 +52,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:dateTextAppearance="@style/CalenderViewDateCustomText"
+                    android:theme="@style/CalenderViewCustom"
+                    android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.488"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:timePickerMode="spinner" />
+
                 <CheckBox
                     android:id="@+id/option1"
                     android:layout_width="350dp"
@@ -157,7 +180,6 @@
                     android:background="@drawable/option_button"/>
 
 
-
                 <EditText
                     android:id="@+id/text_option"
                     android:layout_width="wrap_content"
@@ -167,9 +189,9 @@
                     android:layout_marginBottom="28dp"
                     android:background="@drawable/b4"
                     android:ems="10"
-                    android:textAlignment="center"
+                    android:hint="추가 활동이나 주의사항을 적어주세요."
                     android:inputType="textPersonName"
-                    android:text="추가 활동이나 주의사항을 적어주세요."
+                    android:textAlignment="center"
                     android:textColor="#868686"
                     android:textSize="16dp" />
 
