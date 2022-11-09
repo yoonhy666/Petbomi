@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton review;
     private ImageButton go_review;
     private ImageButton mypage;
+    private ImageButton booking;
     private LinearLayoutManager layoutManager;
     private RecyclerView mHomeRecyclerView;
     private HomeReviewAdapter mAdapter;
@@ -67,6 +68,16 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, LocationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //booking버튼 클릭
+        booking = findViewById(R.id.booking);
+        booking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, BookingHistoryActivity.class);
                 startActivity(intent);
             }
         });

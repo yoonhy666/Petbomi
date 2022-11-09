@@ -29,8 +29,8 @@
                     android:id="@+id/image_slider"
                     android:layout_width="310dp"
                     android:layout_height="107dp"
-                    android:layout_marginTop="10dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
                     app:iss_auto_cycle="true"
                     app:iss_period="3000" />
 
@@ -80,48 +80,59 @@
                                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                         </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="20dp"
-                                android:layout_gravity="center">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp">
 
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="30dp"
-                                    android:layout_marginRight="10dp"
-                                    android:id = "@+id/home_recyclerview"
-                                    android:scrollbars="none" />
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/home_recyclerview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="10dp"
+                                android:scrollbars="none" />
 
-<!--                                <<ImageView-->
-<!--                                    android:id="@+id/review1"-->
-<!--                                    android:layout_width="match_parent"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    app:srcCompat="@drawable/review1" />-->
+                        </LinearLayout>
 
-<!--                                <ImageView-->
-<!--                                    android:id="@+id/review2"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    app:srcCompat="@drawable/review2" />>-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                            </LinearLayout>
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginTop="40dp"
+                                android:text="이벤트 정보"
+                                android:textColor="#141414"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
 
+                            <ImageButton
+                                android:id="@+id/go_event"
+                                style="?android:borderlessButtonStyle"
+                                android:layout_width="58dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="190dp"
+                                android:layout_marginTop="40dp"
+                                app:srcCompat="@drawable/go_review"
+                                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        </LinearLayout>
 
                         <com.denzcoskun.imageslider.ImageSlider
                             android:id="@+id/image_slider2"
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_width="320dp"
+                            android:layout_height="180dp"
                             android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
                             app:iss_auto_cycle="true"
                             app:iss_period="3000" />
-
-
                     </LinearLayout>
+
 
                 </FrameLayout>
 
@@ -149,7 +160,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/Booking"
+                android:id="@+id/booking"
                 style="?android:borderlessButtonStyle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
