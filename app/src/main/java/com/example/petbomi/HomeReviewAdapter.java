@@ -27,6 +27,22 @@ public class HomeReviewAdapter extends RecyclerView.Adapter<HomeReviewAdapter.Ho
 
     @Override
     public void onBindViewHolder(@NonNull HomeReviewViewHolder holder, int position) {
+
+        if (position == datas.size() - 1) {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
+            params.rightMargin = 110;
+            holder.itemView.setLayoutParams(params);
+        } else if (position == datas.size() - 3) {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
+            params.leftMargin = 110;
+            holder.itemView.setLayoutParams(params);
+        } else {
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
+            params.leftMargin = 20;
+            holder.itemView.setLayoutParams(params);
+        }
+
+
         Review data = datas.get(position);
         holder.score.setRating(data.getScore());
         holder.comment.setText(data.getComment());

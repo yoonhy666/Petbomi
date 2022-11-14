@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="318dp"
     android:layout_height="145dp"
-    app:cardCornerRadius="16dp"
     android:layout_margin="5dp"
-    app:cardElevation="5dp"
-    tools:context=".HomeReviewDetail">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,41 +18,42 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/home_nickname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textColor="#4E4D4D"
-            android:textStyle="bold"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="20dp" />
+            <TextView
+                android:id="@+id/home_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#4E4D4D"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:text="닉네임칸"/>
 
-        <RatingBar
-            android:id="@+id/home_score"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="22dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:isIndicator="false"
-            android:numStars="5"
-            android:rating="0"
-            android:stepSize="10" />
+            <RatingBar
+                android:id="@+id/home_score"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="10" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/home_comment"
-            android:layout_gravity="center"
             android:layout_width="230dp"
             android:layout_height="60dp"
-
+            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:ellipsize="end"
             android:maxLines="5"
             android:textColor="#656565"
-            android:textSize="13.5dp" />
+            android:textSize="13.5dp"
+            android:text="좋아요"/>
 
 
     </LinearLayout>

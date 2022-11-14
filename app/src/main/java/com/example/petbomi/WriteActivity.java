@@ -2,6 +2,9 @@ package com.example.petbomi;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,8 +51,8 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
 
         if (mAuth.getCurrentUser() != null) {
             mStore.collection("user").document(mAuth.getCurrentUser().getUid())
-                   .get()
-                   .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                             if (task.getResult() != null) {
@@ -59,17 +62,17 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
                     });
         }
 
-        //backbtn
+        //backbtn 안됨;; (activity에서 fragment로 화면 전환)
+        MenuReviewFragment reviewFragment;
+        reviewFragment = new MenuReviewFragment();
         backbtn = findViewById(R.id.backbtn);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WriteActivity.this, HomeActivity.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, reviewFragment).commit();
             }
         });
     }
-
 
     @Override
     public void onClick(View v) {

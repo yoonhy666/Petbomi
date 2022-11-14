@@ -120,18 +120,40 @@ public class LocationActivity extends AppCompatActivity {
         marker10.setMapPoint(MARKER_POINT10);
 
         //  (클릭 전)기본으로 제공하는 BluePin 마커 모양의 색.
-        marker1.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker2.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker3.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker4.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker5.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker6.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker7.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker8.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker9.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        marker10.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker1.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker2.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker3.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker4.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker5.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker6.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker7.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker8.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker9.setMarkerType(MapPOIItem.MarkerType.BluePin);
+//        marker10.setMarkerType(MapPOIItem.MarkerType.BluePin);
 
+        //커스텀 마커 설정
+        marker1.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker2.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker3.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker4.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker5.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker6.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker7.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker8.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker9.setMarkerType(MapPOIItem.MarkerType.CustomImage);
+        marker10.setMarkerType(MapPOIItem.MarkerType.CustomImage);
 
+        //마커 이미지 변경
+        marker1.setCustomImageResourceId(R.drawable.marker);
+        marker2.setCustomImageResourceId(R.drawable.marker);
+        marker3.setCustomImageResourceId(R.drawable.marker);
+        marker4.setCustomImageResourceId(R.drawable.marker);
+        marker5.setCustomImageResourceId(R.drawable.marker);
+        marker6.setCustomImageResourceId(R.drawable.marker);
+        marker7.setCustomImageResourceId(R.drawable.marker);
+        marker8.setCustomImageResourceId(R.drawable.marker);
+        marker9.setCustomImageResourceId(R.drawable.marker);
+        marker10.setCustomImageResourceId(R.drawable.marker);
 
 
         // 지도화면 위에 추가되는 아이콘을 추가하기 위한 호출(말풍선 모양)

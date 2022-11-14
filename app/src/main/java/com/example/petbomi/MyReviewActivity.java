@@ -2,78 +2,76 @@ package com.example.petbomi;
 
 import static java.lang.String.valueOf;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 
-public class ReviewActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyReviewActivity extends AppCompatActivity {
 
     private RecyclerView mReviewRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private ReviewAdapter mAdapter;
     private List<Review> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
+    private FirebaseUser mAuth = FirebaseAuth.getInstance().getCurrentUser();
     private ImageButton backbtn;
-    private ImageButton home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_review);
+        setContentView(R.layout.activity_my_review);
 
-        mReviewRecyclerView = findViewById(R.id.review_recyclerview);
+        mReviewRecyclerView = findViewById(R.id.myreview_recyclearview);
         layoutManager = new LinearLayoutManager(this);
         mReviewRecyclerView.setLayoutManager(layoutManager);
         mReviewRecyclerView.setHasFixedSize(true);
-        findViewById(R.id.writebtn).setOnClickListener(this);
 
-        //backbtn
-        backbtn = findViewById(R.id.backbtn);
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ReviewActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //homebtn
-        home = findViewById(R.id.home);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ReviewActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        //backbtn 클릭 (뒤로가기)
+        //코드~
     }
 
 
+
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         mDatas = new ArrayList<>();
         mStore.collection("review")
+                .whereEqualTo("documentId", mAuth.getUid())
                 .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -86,7 +84,9 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
                                 String documentId = valueOf(shot.get("documentId"));
                                 float score = Float.parseFloat(shot.get("score").toString());
                                 String comment = valueOf(shot.get("comment"));
-                                Review data = new Review(nickname, documentId, score, comment);
+                                Timestamp ts = snap.getTimestamp("timestamp");
+                                Date date = ts.toDate();
+                                Review data = new Review(nickname, documentId, score, comment, date);
                                 mDatas.add(data);
 
                                 mAdapter = new ReviewAdapter(mDatas);
@@ -95,12 +95,7 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
                         }
                     }
                 });
-    }
 
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(this, WriteActivity.class));
     }
-
 
 }

@@ -19,11 +19,12 @@ public class Review {
 
     }
 
-    public Review(String nickname, String documentId, float score, String comment) {
+    public Review(String nickname, String documentId, float score, String comment, Date date) {
         this.nickname = nickname;
         this.documentId = documentId;
         this.score = score;
         this.comment = comment;
+        this.date = date;
     }
 
     public String getDocumentId() {

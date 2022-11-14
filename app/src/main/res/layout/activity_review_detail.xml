@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ReviewActivity_detail">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,13 +24,14 @@
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="#141414"
-                android:maxLines="1"/>
+                android:maxLines="1"
+                android:text="닉네임칸"/>
 
             <RatingBar
                 android:id="@+id/review_score"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="22dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:isIndicator="false"
@@ -39,13 +39,15 @@
                 android:rating="0"
                 android:stepSize="10" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/review_date"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_marginLeft="190dp"-->
-<!--                android:textSize="14dp" />-->
+            <TextView
+                android:id="@+id/review_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="13dp"
+                android:textColor="#656565"
+                android:text="11.14"/>
 
         </LinearLayout>
 
@@ -58,7 +60,8 @@
             android:ellipsize="end"
             android:maxLines="5"
             android:textColor="#656565"
-            android:textSize="13.5dp" />
+            android:textSize="13.5dp"
+            android:text="좋아요"/>
 
         <ImageView
             android:id="@+id/line"

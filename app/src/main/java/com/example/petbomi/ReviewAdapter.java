@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder> {
@@ -31,6 +32,10 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
         holder.score.setRating(data.getScore());
         holder.comment.setText(data.getComment());
         holder.nickname.setText(data.getNickname());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("MM.dd");
+        String date = sdf.format(data.getDate());
+        holder.date.setText(date);
     }
 
     @Override
@@ -43,6 +48,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
         private RatingBar score;
         private TextView comment;
         private TextView nickname;
+        private TextView date;
 
         public ReviewViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,6 +56,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
             score = itemView.findViewById(R.id.review_score);
             comment = itemView.findViewById(R.id.review_comment);
             nickname = itemView.findViewById(R.id.review_nickname);
+            date = itemView.findViewById(R.id.review_date);
 
         }
     }

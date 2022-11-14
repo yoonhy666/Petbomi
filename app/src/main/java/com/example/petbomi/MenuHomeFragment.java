@@ -2,20 +2,23 @@ package com.example.petbomi;
 
 import static java.lang.String.valueOf;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -24,97 +27,64 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-public class HomeActivity extends AppCompatActivity {
+public class MenuHomeFragment extends Fragment {
 
     private Button find;
-    private ImageButton review;
     private ImageButton go_review;
-    private ImageButton mypage;
-    private ImageButton booking;
     private LinearLayoutManager layoutManager;
     private RecyclerView mHomeRecyclerView;
     private HomeReviewAdapter mAdapter;
     private List<Review> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private int limit = 3;
-
     ImageSlider imageSlider;
     ImageSlider imageSlider2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_home, container, false);
 
-        mHomeRecyclerView = findViewById(R.id.home_recyclerview);
-        layoutManager = new LinearLayoutManager(this);
+        mHomeRecyclerView = rootView.findViewById(R.id.home_recyclerview);
+        layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         mHomeRecyclerView.setLayoutManager(layoutManager);
         mHomeRecyclerView.setHasFixedSize(true);
 
-        if(FirebaseAuth.getInstance().getCurrentUser()==null){
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             startSignUpActivity();
         }
 
-        //find버튼 클릭
-        find = findViewById(R.id.find);
+        //find버튼 클릭 (fragment에서 activity로 화면 전환)
+        find = rootView.findViewById(R.id.find);
         find.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, LocationActivity.class);
+                Intent intent = new Intent(getActivity(), LocationActivity.class);
                 startActivity(intent);
             }
         });
 
-        //booking버튼 클릭
-        booking = findViewById(R.id.booking);
-        booking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, BookingHistoryActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //review버튼 클릭
-        review = findViewById(R.id.review);
-        review.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //mypage버튼 클릭
-        mypage = findViewById(R.id.mypage);
-        mypage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, MypageActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        //go_reviewr버튼 클릭
-        go_review = findViewById(R.id.go_review);
+        //go_review버튼 클릭 (fragment간 화면 전환)
+        go_review = rootView.findViewById(R.id.go_review);
         go_review.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                MenuReviewFragment reviewFragment = new MenuReviewFragment();
+                transaction.replace(R.id.menu_frame_layout, reviewFragment);
+                transaction.commit();
             }
         });
 
         //banner1
-        imageSlider= findViewById(R.id.image_slider);
+        imageSlider = rootView.findViewById(R.id.image_slider);
 
         ArrayList<SlideModel> images = new ArrayList<>();
         images.add(new SlideModel(R.drawable.banner1, null));
@@ -124,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //banner2
-        imageSlider2 = findViewById(R.id.image_slider2);
+        imageSlider2 = rootView.findViewById(R.id.image_slider2);
 
         ArrayList<SlideModel> images2 = new ArrayList<>();
         images2.add(new SlideModel(R.drawable.home_banner2, null));
@@ -133,15 +103,17 @@ public class HomeActivity extends AppCompatActivity {
         imageSlider2.setImageList(images2);
 
 
+        return rootView;
 
     }
-    private void startSignUpActivity(){
-        Intent intent =new Intent(this,RegisterActivity.class);
+
+    private void startSignUpActivity() {
+        Intent intent = new Intent(getActivity(), RegisterActivity.class);
         startActivity(intent);
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         mDatas = new ArrayList<>();
         mStore.collection("review")
@@ -157,7 +129,9 @@ public class HomeActivity extends AppCompatActivity {
                                 String documentId = valueOf(shot.get("documentId"));
                                 float score = Float.parseFloat(shot.get("score").toString());
                                 String comment = valueOf(shot.get("comment"));
-                                Review data = new Review(nickname, documentId, score, comment);
+                                Timestamp ts = snap.getTimestamp("timestamp");
+                                Date date = ts.toDate();
+                                Review data = new Review(nickname, documentId, score, comment, date);
                                 mDatas.add(data);
 
                                 mAdapter = new HomeReviewAdapter(mDatas);

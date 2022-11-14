@@ -1,34 +1,31 @@
 package com.example.petbomi;
 
-import static java.lang.String.valueOf;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
+
+import org.checkerframework.checker.units.qual.K;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class MypageActivity extends AppCompatActivity {
+public class MenuMypageFragment extends Fragment {
 
     private RecyclerView mMypageRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -36,52 +33,49 @@ public class MypageActivity extends AppCompatActivity {
     private List<Mypage> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
-    private ImageButton home;
+    private TextView logout;
+    private TextView mypage_review;
+    private TextView mypage_edit;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mypage);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        mMypageRecyclerView = findViewById(R.id.mypage_recyclearview);
-        layoutManager = new LinearLayoutManager(this);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_mypage, container, false);
+
+        mMypageRecyclerView = rootView.findViewById(R.id.mypage_recyclearview);
+        layoutManager = new LinearLayoutManager(getActivity());
         mMypageRecyclerView.setLayoutManager(layoutManager);
         mMypageRecyclerView.setHasFixedSize(true);
 
-        //homebtn
-        home = findViewById(R.id.home_x);
-        home.setOnClickListener(new View.OnClickListener() {
+        //로그아웃
+        logout = rootView.findViewById(R.id.mypage_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MypageActivity.this, HomeActivity.class);
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
+
+        //리뷰관리로 이동
+        mypage_review = rootView.findViewById(R.id.mypage_review);
+        mypage_review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyReviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        return rootView;
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
-//        mDatas = new ArrayList<>();
-//        mStore.collection("user")
-//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException error) {
-//                        if (queryDocumentSnapshots != null) {
-//                            mDatas.clear();
-//                            for (DocumentSnapshot snap : queryDocumentSnapshots.getDocuments()) {
-//                                Map<String, Object> shot = snap.getData();
-//                                String nickname = valueOf(shot.get("nickname"));
-//                                String email = valueOf(shot.get("email"));
-//                                Mypage data = new Mypage(nickname, email);
-//                                mDatas.add(data);
-//
-//                                mAdapter = new MypageAdapter(mDatas);
-//                                mMypageRecyclerView.setAdapter(mAdapter);
-//                            }
-//                        }
-//                    }
-//                });
 
         if (mUser != null) {
             mDatas = new ArrayList<>();
@@ -105,4 +99,6 @@ public class MypageActivity extends AppCompatActivity {
                     });
         }
     }
+
 }
+

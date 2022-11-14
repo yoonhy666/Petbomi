@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
     private void startToast(String msg) {Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();}
 
     private void startMainActivity() {
-        Intent intent=new Intent(this,HomeActivity.class);
+        Intent intent=new Intent(this,MenuActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
