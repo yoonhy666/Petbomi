@@ -52,6 +52,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/bomi_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="보미이름"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"/>
+
                 <CalendarView
                     android:id="@+id/calendarView"
                     android:layout_width="wrap_content"
@@ -74,6 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:timePickerMode="spinner" />
+
 
                 <CheckBox
                     android:id="@+id/option1"
@@ -190,7 +200,7 @@
                     android:background="@drawable/b4"
                     android:ems="10"
                     android:hint="추가 활동이나 주의사항을 적어주세요."
-                    android:inputType="textPersonName"
+                    android:inputType="text|textMultiLine"
                     android:textAlignment="center"
                     android:textColor="#868686"
                     android:textSize="16dp" />

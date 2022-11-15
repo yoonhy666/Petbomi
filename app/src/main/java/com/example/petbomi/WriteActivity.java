@@ -69,7 +69,7 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, reviewFragment).commit();
+                finish();
             }
         });
     }

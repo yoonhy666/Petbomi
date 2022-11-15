@@ -1,10 +1,12 @@
 package com.example.petbomi;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +51,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
         return (arrayList != null ? arrayList.size():0);
     }
 
+
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
         ImageView item_profile;
@@ -61,6 +64,20 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
             this.item_name=itemView.findViewById(R.id.item_name);
             this.item_addr=itemView.findViewById(R.id.item_addr);
 
+            //클릭 이벤트
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int currentPos = getBindingAdapterPosition(); //click position
+                    User user = arrayList.get(currentPos);
+                    Intent intent;
+                    intent = new Intent(context, BookingActivity.class);
+                    intent.putExtra("name", user.getName());
+                    context.startActivity(intent);
+                }
+            });
+
         }
     }
+
 }

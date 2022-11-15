@@ -8,11 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class BookingActivity extends AppCompatActivity {
 
     private ImageButton backbtn;
     private Button find2;
+    private TextView bomi_name;
+    private Intent intent;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,14 @@ public class BookingActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //보미 이름 가져오기
+        intent = getIntent();
+        name = intent.getStringExtra("name");
+
+        bomi_name = findViewById(R.id.bomi_name);
+        bomi_name.setText(name);
+
 
     }
 }
