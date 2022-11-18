@@ -36,7 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="22dp"
-                android:isIndicator="false"
+                android:progressTint="#FCE257"
+                android:secondaryProgressTint="#FCE257"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:rating="0"
                 android:stepSize="10" />

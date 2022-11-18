@@ -25,8 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="닉네임"
-                android:layout_marginTop="25dp"
-                android:textSize="25dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -36,6 +36,19 @@
                 android:layout_height="wrap_content"
                 android:text="주소"
                 android:layout_marginTop="5dp" />
+
+            <RatingBar
+                android:id="@+id/item_score"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="0"
+                android:progressTint="#FCE257"
+                android:secondaryProgressTint="#FCE257"
+                android:stepSize="10" />
 
 
         </LinearLayout>

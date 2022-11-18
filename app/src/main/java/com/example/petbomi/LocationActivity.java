@@ -119,18 +119,6 @@ public class LocationActivity extends AppCompatActivity {
         marker9.setMapPoint(MARKER_POINT9);
         marker10.setMapPoint(MARKER_POINT10);
 
-        //  (클릭 전)기본으로 제공하는 BluePin 마커 모양의 색.
-//        marker1.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker2.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker3.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker4.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker5.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker6.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker7.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker8.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker9.setMarkerType(MapPOIItem.MarkerType.BluePin);
-//        marker10.setMarkerType(MapPOIItem.MarkerType.BluePin);
-
         //커스텀 마커 설정
         marker1.setMarkerType(MapPOIItem.MarkerType.CustomImage);
         marker2.setMarkerType(MapPOIItem.MarkerType.CustomImage);

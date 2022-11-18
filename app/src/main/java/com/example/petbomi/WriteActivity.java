@@ -62,9 +62,6 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
                     });
         }
 
-        //backbtn 안됨;; (activity에서 fragment로 화면 전환)
-        MenuReviewFragment reviewFragment;
-        reviewFragment = new MenuReviewFragment();
         backbtn = findViewById(R.id.backbtn);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override

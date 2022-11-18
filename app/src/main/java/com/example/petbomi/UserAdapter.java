@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +29,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.location_sheet_item,parent,false);
-        CustomViewHolder holer=new CustomViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.location_sheet_item, parent, false);
+        CustomViewHolder holer = new CustomViewHolder(view);
 
 
         return holer;
@@ -44,11 +45,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
 
         holder.item_name.setText(arrayList.get(position).getName());
         holder.item_addr.setText(arrayList.get(position).getAddr());
+        holder.item_score.setRating(arrayList.get(position).getScore());
     }
 
     @Override
     public int getItemCount() {
-        return (arrayList != null ? arrayList.size():0);
+        return (arrayList != null ? arrayList.size() : 0);
     }
 
 
@@ -57,12 +59,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
         ImageView item_profile;
         TextView item_name;
         TextView item_addr;
+        RatingBar item_score;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.item_profile=itemView.findViewById(R.id.item_profile);
-            this.item_name=itemView.findViewById(R.id.item_name);
-            this.item_addr=itemView.findViewById(R.id.item_addr);
+            this.item_profile = itemView.findViewById(R.id.item_profile);
+            this.item_name = itemView.findViewById(R.id.item_name);
+            this.item_addr = itemView.findViewById(R.id.item_addr);
+            this.item_score = itemView.findViewById(R.id.item_score);
 
             //클릭 이벤트
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -72,12 +76,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
                     User user = arrayList.get(currentPos);
                     Intent intent;
                     intent = new Intent(context, BookingActivity.class);
-                    intent.putExtra("name", user.getName());
+                    intent.putExtra("bominame", user.getName());
+                    intent.putExtra("bomiprofile", arrayList.get(currentPos).getProfile());
                     context.startActivity(intent);
                 }
             });
 
         }
     }
-
 }

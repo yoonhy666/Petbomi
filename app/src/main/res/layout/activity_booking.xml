@@ -52,17 +52,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/bomi_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="보미이름"
-                    android:layout_gravity="center"
-                    android:textSize="20dp"/>
+                <!--                <de.hdodenhof.circleimageview.CircleImageView-->
+                <!--                    android:id="@+id/booking_profile"-->
+                <!--                    android:layout_width="100dp"-->
+                <!--                    android:layout_height="100dp"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:layout_marginTop="20dp"-->
+                <!--                    android:src="@drawable/ic_launcher_background"/>-->
+
 
                 <CalendarView
-                    android:id="@+id/calendar"
+                    android:id="@+id/calendarView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -89,19 +89,35 @@
                     android:textStyle="bold" />
 
                 <TimePicker
-                    android:id="@+id/time_picker"
+                    android:id="@+id/timePicker1"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:timePickerMode="spinner" />
 
                 <TextView
-                    android:id="@+id/tv_time"
+                    android:id="@+id/tv_time1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="시간을 지정해주세요!"
+                    android:text="시작 시간을 지정해주세요!"
                     android:textSize="15dp"
                     android:textStyle="bold" />
+
+                <TimePicker
+                    android:id="@+id/timePicker2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:timePickerMode="spinner" />
+
+                <TextView
+                    android:id="@+id/tv_time2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="마감 시간을 지정해주세요!"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
 
                 <CheckBox
                     android:id="@+id/option1"
@@ -210,7 +226,7 @@
 
                 <EditText
                     android:id="@+id/text_option"
-                    android:layout_width="wrap_content"
+                    android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="28dp"
@@ -231,13 +247,13 @@
                     app:srcCompat="@drawable/line" />
 
                 <Button
-                    android:id="@+id/find2"
+                    android:id="@+id/bookingbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="14dp"
                     android:background="@drawable/b2"
-                    android:text="선택 완료"
+                    android:text="예약하기"
                     android:textColor="#1F1F1F"
                     android:textSize="16dp"
                     android:textStyle="bold"
