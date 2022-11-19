@@ -35,7 +35,7 @@ import java.util.Map;
 public class MenuHomeFragment extends Fragment {
 
     private Button find;
-    private ImageButton go_review;
+    private ImageButton go_review, go_event;
     private LinearLayoutManager layoutManager;
     private RecyclerView mHomeRecyclerView;
     private HomeReviewAdapter mAdapter;
@@ -80,6 +80,16 @@ public class MenuHomeFragment extends Fragment {
                 MenuReviewFragment reviewFragment = new MenuReviewFragment();
                 transaction.replace(R.id.menu_frame_layout, reviewFragment);
                 transaction.commit();
+            }
+        });
+
+        //go_event버튼 클릭
+        go_event = rootView.findViewById(R.id.go_event);
+        go_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EventActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:background="@drawable/back_color" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,90 +24,114 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/back_color">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/history_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="35dp"
+                        android:text="--월 --일"
+                        android:textColor="@color/black"
+                        android:textSize="21dp"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/history_date"
+                            android:id="@+id/history_stime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="35dp"
-                            android:text="12월 25일"
+                            android:layout_marginTop="6dp"
+                            android:text="00:00"
                             android:textColor="@color/black"
-                            android:textSize="22dp"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center">
-                            <TextView
-                                android:id="@+id/history_stime"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="8dp"
-                                android:text="09:00"
-                                android:textColor="@color/black"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="16dp"
-                                android:layout_marginTop="8dp"
-                                android:textColor="@color/black"
-                                android:text=" ~ " />
-
-                            <TextView
-                                android:id="@+id/history_ftime"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="8dp"
-                                android:text="14:00"
-                                android:textColor="@color/black"
-                                android:textSize="16dp" />
-
-                        </LinearLayout>
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/history_profile"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/ic_launcher_background"/>
+                            android:textSize="16dp" />
 
                         <TextView
-                            android:id="@+id/history_bominame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="~"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/history_ftime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="20dp"
-                            android:text="박보미"
+                            android:layout_marginTop="6dp"
+                            android:text="00:00"
                             android:textColor="@color/black"
-                            android:textSize="18dp" />
+                            android:textSize="16dp" />
 
                     </LinearLayout>
 
-                </FrameLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/history_profile"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_launcher_background" />
+
+                    <TextView
+                        android:id="@+id/history_bominame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="보미 이름"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/history_sms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/b6"
+                            android:text="문자하기"
+                            android:textColor="#484848"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/history_call"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/b6"
+                            android:text="전화하기"
+                            android:textColor="#484848"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
 
-                <!--        <ImageView-->
-                <!--            android:layout_width="match_parent"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            app:srcCompat="@drawable/line4" />-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/line4" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -112,14 +141,14 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
+                        android:layout_marginLeft="50dp"
                         android:layout_marginTop="25dp"
                         app:srcCompat="@drawable/bomi1" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
+                        android:layout_marginLeft="50dp"
                         android:layout_marginTop="25dp"
                         app:srcCompat="@drawable/bomi2" />
 
@@ -139,12 +168,28 @@
                     app:srcCompat="@drawable/line4" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="12dp"
+                    android:text="선택 옵션"
+                    android:textColor="#4B4B4B"
+                    android:textStyle="bold"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:srcCompat="@drawable/line4" />
+
+                <TextView
                     android:id="@+id/history_option1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -152,16 +197,16 @@
                     android:id="@+id/h_line1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -169,16 +214,16 @@
                     android:id="@+id/line2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -186,16 +231,16 @@
                     android:id="@+id/line3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -203,16 +248,16 @@
                     android:id="@+id/line4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -220,16 +265,16 @@
                     android:id="@+id/line5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -237,16 +282,16 @@
                     android:id="@+id/line6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -254,16 +299,16 @@
                     android:id="@+id/line7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/line2" />
 
                 <TextView
                     android:id="@+id/history_option8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:text="박박씻기"
+                    android:layout_marginTop="12dp"
+                    android:text="선택옵션"
                     android:textColor="#4B4B4B"
                     android:textSize="17dp" />
 
@@ -272,10 +317,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="75dp"
-                    android:src="@drawable/line2"/>
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/line2" />
 
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

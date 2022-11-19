@@ -4,4 +4,12 @@
         <item>여</item>
         <item>남</item>
     </string-array>
+
+    <integer-array name="banner">
+        <item>@drawable/home_banner2</item>
+        <item>@drawable/home_banner1</item>
+        <item>@drawable/home_banner1</item>
+        <item>@drawable/home_banner1</item>
+        <item>@drawable/home_banner1</item>
+    </integer-array>
 </resources>
