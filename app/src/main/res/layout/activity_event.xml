@@ -43,10 +43,6 @@
 
         </FrameLayout>
 
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,12 +52,12 @@
                     android:id="@+id/eventView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
                     android:dividerHeight="0dp"
                     android:divider="#FFFFFF"/>
 
             </LinearLayout>
 
-<!--        </ScrollView>-->
 
     </LinearLayout>
 

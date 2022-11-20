@@ -6,10 +6,9 @@
     </string-array>
 
     <integer-array name="banner">
-        <item>@drawable/home_banner2</item>
-        <item>@drawable/home_banner1</item>
-        <item>@drawable/home_banner1</item>
-        <item>@drawable/home_banner1</item>
-        <item>@drawable/home_banner1</item>
+        <item>@drawable/event_banner2</item>
+        <item>@drawable/event_banner1</item>
+        <item>@drawable/event_banner3</item>
+        <item>@drawable/event_banner4</item>
     </integer-array>
 </resources>

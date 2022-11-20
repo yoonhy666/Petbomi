@@ -33,9 +33,7 @@ public class MenuMypageFragment extends Fragment {
     private List<Mypage> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
-    private TextView logout;
-    private TextView mypage_review;
-    private TextView mypage_edit;
+    private TextView mypage_review, mypage_pet_edit, mypage_edit, mypage_address, mypage_notice, logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,14 +46,33 @@ public class MenuMypageFragment extends Fragment {
         mMypageRecyclerView.setLayoutManager(layoutManager);
         mMypageRecyclerView.setHasFixedSize(true);
 
-        //로그아웃
-        logout = rootView.findViewById(R.id.mypage_logout);
-        logout.setOnClickListener(new View.OnClickListener() {
+
+        //반려동물 정보 수정으로 이동
+        mypage_pet_edit = rootView.findViewById(R.id.mypage_pet_edit);
+        mypage_pet_edit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MypetEditActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //회원정보 수정으로 이동
+        mypage_edit = rootView.findViewById(R.id.mypage_edit);
+        mypage_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyEditActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //동네 설정하기로 이동
+        mypage_address = rootView.findViewById(R.id.mypage_address);
+        mypage_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyAddressActivity.class);
                 startActivity(intent);
             }
         });
@@ -66,6 +83,28 @@ public class MenuMypageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), MyReviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //공지사항으로 이동
+        mypage_notice = rootView.findViewById(R.id.mypage_notice);
+        mypage_notice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyNoticeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //로그아웃
+        logout = rootView.findViewById(R.id.mypage_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
