@@ -33,14 +33,63 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         holder.sTime.setText(data.getsTime());
         holder.fTime.setText(data.getfTime());
         holder.bomiId.setText(data.getBomiId());
-        holder.option1.setText(data.getOption1());
-        holder.option2.setText(data.getOption2());
-        holder.option3.setText(data.getOption3());
-        holder.option4.setText(data.getOption4());
-        holder.option5.setText(data.getOption5());
-        holder.option6.setText(data.getOption6());
-        holder.option7.setText(data.getOption7());
-        holder.option8.setText(data.getOption8());
+
+        if(data.getOption1()!="null"){
+            holder.option1.setVisibility(View.VISIBLE);
+            holder.option1.setText(data.getOption1());
+        }else{
+            holder.option1.setVisibility(View.GONE);
+        }
+
+        if(data.getOption2()!="null"){
+            holder.option2.setVisibility(View.VISIBLE);
+            holder.option2.setText(data.getOption2());
+        }else{
+            holder.option2.setVisibility(View.GONE);
+        }
+
+        if(data.getOption3()!="null"){
+            holder.option3.setVisibility(View.VISIBLE);
+            holder.option3.setText(data.getOption3());
+        }else{
+            holder.option3.setVisibility(View.GONE);
+        }
+
+        if(data.getOption4()!="null"){
+            holder.option4.setVisibility(View.VISIBLE);
+            holder.option4.setText(data.getOption4());
+        }else{
+            holder.option4.setVisibility(View.GONE);
+        }
+
+        if(data.getOption5()!="null"){
+            holder.option5.setVisibility(View.VISIBLE);
+            holder.option5.setText(data.getOption5());
+        }else{
+            holder.option5.setVisibility(View.GONE);
+        }
+
+        if(data.getOption6()!="null"){
+            holder.option6.setVisibility(View.VISIBLE);
+            holder.option6.setText(data.getOption6());
+        }else{
+            holder.option6.setVisibility(View.GONE);
+        }
+
+        if(data.getOption7()!="null"){
+            holder.option7.setVisibility(View.VISIBLE);
+            holder.option7.setText(data.getOption7());
+        }else{
+            holder.option7.setVisibility(View.GONE);
+        }
+
+        if(data.getOption8()!="null"){
+            holder.option8.setVisibility(View.VISIBLE);
+            holder.option8.setText(data.getOption8());
+        }else{
+            holder.option8.setVisibility(View.GONE);
+        }
+
 
         Glide.with(holder.itemView)
                 .load(datas.get(position).getBomiProfile())
