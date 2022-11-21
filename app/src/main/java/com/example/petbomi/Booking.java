@@ -17,11 +17,13 @@ public class Booking {
     private String sTime;
     private String fTime;
     private String bomiProfile;
+    private String bomiTel;
 
     public Booking() {
     }
 
-    public Booking(String option1, String option2, String option3, String option4, String option5, String option6, String option7, String option8, String text_option, String documentId, String bomiId, String date, String sTime, String fTime, String bomiProfile) {
+    public Booking(String option1, String option2, String option3, String option4, String option5, String option6, String option7, String option8, String text_option, String documentId, String bomiId, String date, String sTime, String fTime, String bomiProfile, String bomiTel) {
+
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
@@ -37,7 +39,7 @@ public class Booking {
         this.sTime = sTime;
         this.fTime = fTime;
         this.bomiProfile = bomiProfile;
-
+        this.bomiTel = bomiTel;
     }
 
     public String getOption1() {
@@ -160,6 +162,14 @@ public class Booking {
         this.bomiProfile = bomiProfile;
     }
 
+    public String getBomiTel() {
+        return bomiTel;
+    }
+
+    public void setBomiTel(String bomiTel) {
+        this.bomiTel = bomiTel;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
@@ -178,6 +188,7 @@ public class Booking {
                 ", sTime='" + sTime + '\'' +
                 ", fTime='" + fTime + '\'' +
                 ", bomiProfile='" + bomiProfile + '\'' +
+                ", bomiTel='" + bomiTel + '\'' +
                 '}';
     }
 }

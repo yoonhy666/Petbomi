@@ -43,7 +43,7 @@ public class BookingActivity extends AppCompatActivity {
     private ImageButton backbtn;
     private Button bookingbtn;
     private Intent intent;
-    private String bominame, documentId, date, StartTime, FinalTime, bomiProfile;
+    private String bominame, documentId, date, StartTime, FinalTime, bomiProfile, bomitel;
     private CheckBox option1, option2, option3, option4, option5, option6, option7, option8;
     private EditText text_option;
     private Booking booking;
@@ -70,13 +70,12 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
 
-        //보미 이름, 사진 가져오기
+        //보미 이름, 사진, 전화번호 가져오기
         intent = getIntent();
         bominame = intent.getStringExtra("bominame");
         bomiProfile = intent.getStringExtra("bomiprofile");
-//        bomiview = findViewById(R.id.booking_profile);
         Glide.with(getApplicationContext()).load(bomiProfile);
-
+        bomitel = intent.getStringExtra("bomitel");
 
         //달력 날짜 가져오기
         calendarView = findViewById(R.id.calendarView);
@@ -161,6 +160,7 @@ public class BookingActivity extends AppCompatActivity {
                                 booking.setsTime(tv_time1.getText().toString());
                                 booking.setfTime(tv_time2.getText().toString());
                                 booking.setBomiProfile(bomiProfile);
+                                booking.setBomiTel(bomitel);
 
                                 //체크박스 선택
                                 if (option1.isChecked()) {

@@ -78,6 +78,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomViewHold
                     intent = new Intent(context, BookingActivity.class);
                     intent.putExtra("bominame", user.getName());
                     intent.putExtra("bomiprofile", arrayList.get(currentPos).getProfile());
+                    intent.putExtra("bomitel", user.getTel());
                     context.startActivity(intent);
                 }
             });

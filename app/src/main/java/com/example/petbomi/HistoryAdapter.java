@@ -39,6 +39,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         holder.sTime.setText(data.getsTime());
         holder.fTime.setText(data.getfTime());
         holder.bomiId.setText(data.getBomiId());
+        holder.bomiTel.setText(data.getBomiTel());
         Glide.with(holder.itemView)
                 .load(datas.get(position).getBomiProfile())
                 .into(holder.bomiProfile);
@@ -139,6 +140,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         private ImageView line8;
         private Button history_call;
         private Button history_sms;
+        private TextView bomiTel;
 
 
         public HistoryViewHolder(@NonNull View itemView) {
@@ -165,12 +167,13 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             line6 = itemView.findViewById(R.id.line6);
             line7 = itemView.findViewById(R.id.line7);
             line8 = itemView.findViewById(R.id.line8);
+            bomiTel = itemView.findViewById(R.id.history_bomitel);
 
             history_call = itemView.findViewById(R.id.history_call);
             history_call.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Uri uri = Uri.parse("tel:010-0000-0000");
+                    Uri uri = Uri.parse("tel:"+bomiTel.getText());
                     Intent intent = new Intent(Intent.ACTION_DIAL, uri);
                     v.getContext().startActivity(intent);
                 }
@@ -180,7 +183,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             history_sms.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Uri uri = Uri.parse("sms:010-0000-0000");
+                    Uri uri = Uri.parse("sms:"+bomiTel.getText());
                     Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
                     intent.putExtra("sms_body", "보미님 안녕하세요");
                     v.getContext().startActivity(intent);

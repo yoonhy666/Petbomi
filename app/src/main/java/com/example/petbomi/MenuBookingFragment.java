@@ -2,13 +2,19 @@ package com.example.petbomi;
 
 import static java.lang.String.valueOf;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,10 +39,12 @@ public class MenuBookingFragment extends Fragment {
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseUser mAuth = FirebaseAuth.getInstance().getCurrentUser();
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_booking_history, container, false);
+
 
         mHistoryRecyclerView = rootView.findViewById(R.id.history_recyclearview);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -75,9 +83,10 @@ public class MenuBookingFragment extends Fragment {
                                 String text_option = valueOf(shot.get("text_option"));
                                 String documentId = valueOf(shot.get("documentId"));
                                 String bomiProfile = valueOf(shot.get("bomiProfile"));
+                                String bomiTel = valueOf(shot.get("bomiTel"));
 
                                 Booking data = new Booking(option1, option2, option3, option4, option5, option6, option7, option8,
-                                        text_option, documentId, bomiId, date, sTime, fTime, bomiProfile);
+                                        text_option, documentId, bomiId, date, sTime, fTime, bomiProfile, bomiTel);
                                 mDatas.add(data);
 
                                 mAdapter = new HistoryAdapter(mDatas);

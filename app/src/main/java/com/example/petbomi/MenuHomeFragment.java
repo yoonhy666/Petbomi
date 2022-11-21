@@ -110,10 +110,8 @@ public class MenuHomeFragment extends Fragment {
         images2.add(new SlideModel(R.drawable.home_banner2, null));
         images2.add(new SlideModel(R.drawable.home_banner1, null));
         images2.add(new SlideModel(R.drawable.home_banner3, null));
-        images2.add(new SlideModel(R.drawable.home_banner4, null));
 
         imageSlider2.setImageList(images2);
-
 
         return rootView;
 
