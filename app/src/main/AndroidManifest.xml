@@ -70,9 +70,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ScheduleActivity"
-            android:exported="false" />
-        <activity
             android:name=".WriteActivity"
             android:exported="false" />
         <activity

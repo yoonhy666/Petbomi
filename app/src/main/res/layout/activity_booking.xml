@@ -16,25 +16,24 @@
             android:layout_height="60dp"
             android:background="@drawable/back_color">
 
+            <ImageButton
+                android:id="@+id/backbtn"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/backbtn" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/backbtn"
-                    style="?android:borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    app:srcCompat="@drawable/backbtn" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="75dp"
-                    android:layout_marginTop="23dp"
                     android:text="일정 / 옵션"
                     android:textColor="#141414"
                     android:textSize="17dp"
@@ -42,6 +41,7 @@
             </LinearLayout>
 
         </FrameLayout>
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -51,15 +51,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <!--                <de.hdodenhof.circleimageview.CircleImageView-->
-                <!--                    android:id="@+id/booking_profile"-->
-                <!--                    android:layout_width="100dp"-->
-                <!--                    android:layout_height="100dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:layout_marginTop="20dp"-->
-                <!--                    android:src="@drawable/ic_launcher_background"/>-->
-
 
                 <CalendarView
                     android:id="@+id/calendarView"
@@ -265,9 +256,10 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/b4"
                     android:ems="10"
+                    android:padding="20dp"
                     android:hint="추가 활동이나 주의사항을 적어주세요."
+                    android:gravity="top"
                     android:inputType="text|textMultiLine"
-                    android:textAlignment="center"
                     android:textColor="#868686"
                     android:textSize="16dp" />
 
@@ -287,7 +279,7 @@
                     android:background="@drawable/b2"
                     android:text="예약하기"
                     android:textColor="#1F1F1F"
-                    android:textSize="16dp"
+                    android:textSize="17dp"
                     android:textStyle="bold" />
 
 

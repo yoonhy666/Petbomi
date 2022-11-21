@@ -16,30 +16,30 @@
             android:layout_height="60dp"
             android:background="@drawable/back_color">
 
+            <ImageButton
+                android:id="@+id/backbtn"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/backbtn" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/backbtn"
-                    style="?android:borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    app:srcCompat="@drawable/backbtn" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="23dp"
                     android:text="반려동물 정보 수정"
                     android:textColor="#141414"
                     android:textSize="17dp"
                     android:textStyle="bold" />
             </LinearLayout>
+
         </FrameLayout>
 
         <LinearLayout
@@ -180,6 +180,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/bg_button"
                 android:text="수정완료"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 

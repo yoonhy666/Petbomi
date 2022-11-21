@@ -9,12 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -43,7 +46,7 @@ public class MenuReviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_review, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_review, container, false);
 
         mReviewRecyclerView = rootView.findViewById(R.id.review_recyclerview);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -69,12 +72,13 @@ public class MenuReviewFragment extends Fragment {
         mDatas = new ArrayList<>();
         mStore.collection("review")
                 .orderBy("timestamp", Query.Direction.DESCENDING)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException error) {
-                        if (queryDocumentSnapshots != null) {
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.getResult() != null) {
                             mDatas.clear();
-                            for (DocumentSnapshot snap : queryDocumentSnapshots.getDocuments()) {
+                            for (DocumentSnapshot snap : task.getResult().getDocuments()) {
                                 Map<String, Object> shot = snap.getData();
                                 String nickname = valueOf(shot.get("nickname"));
                                 String documentId = valueOf(shot.get("documentId"));

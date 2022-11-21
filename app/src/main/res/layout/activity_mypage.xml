@@ -28,14 +28,13 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="150dp"
-                            android:layout_marginTop="23dp"
                             android:text="마이페이지"
                             android:textColor="#141414"
                             android:textSize="17dp"
@@ -53,8 +52,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/mypage_recyclearview"
                         android:layout_width="match_parent"
-                        android:layout_height="118dp"
-                        android:layout_marginBottom="5dp" />
+                        android:layout_height="118dp" />
 
                     <ImageView
                         android:id="@+id/line"
@@ -70,13 +68,13 @@
                         android:layout_marginTop="15dp"
                         android:text="반려동물 정보 수정"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                     <TextView
@@ -87,13 +85,13 @@
                         android:layout_marginTop="15dp"
                         android:text="회원정보 수정"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                     <TextView
@@ -104,13 +102,13 @@
                         android:layout_marginTop="15dp"
                         android:text="동네 설정하기"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                     <TextView
@@ -119,15 +117,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="15dp"
-                        android:text="리뷰 관리"
+                        android:text="나의 리뷰"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                     <TextView
@@ -138,13 +136,13 @@
                         android:layout_marginTop="15dp"
                         android:text="공지사항"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                     <TextView
@@ -155,13 +153,13 @@
                         android:layout_marginTop="15dp"
                         android:text="로그아웃"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                     <TextView
@@ -172,13 +170,13 @@
                         android:layout_marginTop="15dp"
                         android:text="회원탈퇴"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <ImageView
                         android:id="@+id/line8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/line4" />
 
                 </LinearLayout>
