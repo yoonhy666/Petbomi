@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 public class Mypagesecession extends AppCompatActivity {
     TextView textView;
 

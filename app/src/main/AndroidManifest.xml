@@ -118,6 +118,7 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="363c0bcfa0fdf1eb18462541b3a59964" />
+
     </application>
 
 </manifest>
