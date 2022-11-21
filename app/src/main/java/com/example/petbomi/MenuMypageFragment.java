@@ -33,7 +33,7 @@ public class MenuMypageFragment extends Fragment {
     private List<Mypage> mDatas;
     private FirebaseFirestore mStore = FirebaseFirestore.getInstance();
     private FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
-    private TextView mypage_review, mypage_pet_edit, mypage_edit, mypage_address, mypage_notice, logout;
+    private TextView mypage_review, mypage_pet_edit, mypage_edit, mypage_address, mypage_notice, logout, secession;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -110,8 +110,8 @@ public class MenuMypageFragment extends Fragment {
         });
 
         //회원탈퇴
-        logout = rootView.findViewById(R.id.mypage_secession);
-        logout.setOnClickListener(new View.OnClickListener() {
+        secession = rootView.findViewById(R.id.mypage_secession);
+        secession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Mypagesecession.class);
