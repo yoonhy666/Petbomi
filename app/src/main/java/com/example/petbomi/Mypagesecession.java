@@ -50,10 +50,11 @@ public class Mypagesecession extends AppCompatActivity {
         builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int whichButton) {
-                String message = "탈퇴 하지않겠습니다. ";
+                String message = "탈퇴하지않겠습니다. ";
                 textView.setText(message);
             }
         });
+
         AlertDialog dialog = builder.create();
 
         dialog.show();
