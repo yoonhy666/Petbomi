@@ -109,6 +109,17 @@ public class MenuMypageFragment extends Fragment {
             }
         });
 
+        //회원탈퇴
+        logout = rootView.findViewById(R.id.mypage_secession);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Mypagesecession.class);
+                startActivity(intent);
+            }
+        });
+
+
         return rootView;
     }
 
