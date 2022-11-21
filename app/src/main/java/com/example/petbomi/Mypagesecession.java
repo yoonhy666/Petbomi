@@ -36,21 +36,21 @@ public class Mypagesecession extends AppCompatActivity {
         builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int whichButton) {
-                String message = "예 버튼이 눌렸습니다. ";
+                String message = "탈퇴되었습니다. ";
                 textView.setText(message);
             }
         });
         builder.setNeutralButton("취소", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int whichButton) {
-                String message = "취소 버튼이 눌렸습니다. ";
+                String message = "취소되었습니다. ";
                 textView.setText(message);
             }
         });
         builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int whichButton) {
-                String message = "아니오 버튼이 눌렸습니다. ";
+                String message = "탈퇴 하지않겠습니다. ";
                 textView.setText(message);
             }
         });

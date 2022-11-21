@@ -119,7 +119,6 @@ public class MenuMypageFragment extends Fragment {
             }
         });
 
-
         return rootView;
     }
 
