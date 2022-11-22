@@ -22,13 +22,12 @@ public class BookingfinalActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_fin);
 
-            btn = findViewById(R.id.go_history);
+            btn = findViewById(R.id.go_back);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.menu_frame_layout, fragment);
-                    transaction.commit();
+                    Intent intent=new Intent(BookingfinalActivity.this,LocationActivity.class);
+                    startActivity(intent);
                 }
             });
 
