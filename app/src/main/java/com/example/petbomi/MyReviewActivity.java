@@ -61,7 +61,13 @@ public class MyReviewActivity extends AppCompatActivity {
         mReviewRecyclerView.setHasFixedSize(true);
 
         //backbtn 클릭 (뒤로가기)
-        //코드~
+        backbtn = findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

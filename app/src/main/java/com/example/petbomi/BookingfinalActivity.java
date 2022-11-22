@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ public class BookingfinalActivity extends FragmentActivity {
     private Button btn;
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentTransaction transaction = fragmentManager.beginTransaction();
-    private MenuBookingFragment menuBookingFragment = new MenuBookingFragment();
+    private MenuBookingFragment fragment = new MenuBookingFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,9 @@ public class BookingfinalActivity extends FragmentActivity {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    transaction.replace(R.id.menu_frame_layout, menuBookingFragment).commitAllowingStateLoss();
+                    transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.menu_frame_layout, fragment);
+                    transaction.commit();
                 }
             });
 

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,7 +38,7 @@ import java.util.Map;
 public class MenuHomeFragment extends Fragment {
 
     private Button find;
-    private ImageButton go_review;
+    private ImageButton go_review, go_event;
     private LinearLayoutManager layoutManager;
     private RecyclerView mHomeRecyclerView;
     private HomeReviewAdapter mAdapter;
@@ -83,6 +86,16 @@ public class MenuHomeFragment extends Fragment {
             }
         });
 
+        //go_event버튼 클릭
+        go_event = rootView.findViewById(R.id.go_event);
+        go_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //banner1
         imageSlider = rootView.findViewById(R.id.image_slider);
 
@@ -99,9 +112,9 @@ public class MenuHomeFragment extends Fragment {
         ArrayList<SlideModel> images2 = new ArrayList<>();
         images2.add(new SlideModel(R.drawable.home_banner2, null));
         images2.add(new SlideModel(R.drawable.home_banner1, null));
+        images2.add(new SlideModel(R.drawable.home_banner3, null));
 
         imageSlider2.setImageList(images2);
-
 
         return rootView;
 
@@ -118,12 +131,13 @@ public class MenuHomeFragment extends Fragment {
         mDatas = new ArrayList<>();
         mStore.collection("review")
                 .orderBy("timestamp", Query.Direction.DESCENDING).limit(limit)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException error) {
-                        if (queryDocumentSnapshots != null) {
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.getResult() != null) {
                             mDatas.clear();
-                            for (DocumentSnapshot snap : queryDocumentSnapshots.getDocuments()) {
+                            for (DocumentSnapshot snap : task.getResult().getDocuments()) {
                                 Map<String, Object> shot = snap.getData();
                                 String nickname = valueOf(shot.get("nickname"));
                                 String documentId = valueOf(shot.get("documentId"));
@@ -140,5 +154,7 @@ public class MenuHomeFragment extends Fragment {
                         }
                     }
                 });
+                    }
+
+
     }
-}

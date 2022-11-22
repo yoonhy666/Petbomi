@@ -5,8 +5,9 @@ public class User {
     private String name;
     private String addr;
     private float score;
-    public User(){}
+    private String tel;
 
+    public User(){}
 
     public String getProfile() {
         return profile;
@@ -38,5 +39,13 @@ public class User {
 
     public void setAddr(String addr) {
         this.addr = addr;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 }

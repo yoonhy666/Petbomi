@@ -3,6 +3,7 @@ package com.example.petbomi;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -29,6 +30,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class BookingActivity extends AppCompatActivity {
 
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -38,14 +43,13 @@ public class BookingActivity extends AppCompatActivity {
     private ImageButton backbtn;
     private Button bookingbtn;
     private Intent intent;
-    private String bominame, documentId, date, StartTime, FinalTime, bomiProfile;
+    private String bominame, documentId, date, StartTime, FinalTime, bomiProfile, bomitel;
     private CheckBox option1, option2, option3, option4, option5, option6, option7, option8;
     private EditText text_option;
     private Booking booking;
     private CalendarView calendarView;
     private TimePicker timePicker1, timePicker2;
     private TextView tv_date, tv_time1, tv_time2;
-//    private CircleImageView bomiview;
 
 
     @Override
@@ -66,13 +70,12 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
 
-        //보미 이름, 사진 가져오기
+        //보미 이름, 사진, 전화번호 가져오기
         intent = getIntent();
         bominame = intent.getStringExtra("bominame");
         bomiProfile = intent.getStringExtra("bomiprofile");
-//        bomiview = findViewById(R.id.booking_profile);
         Glide.with(getApplicationContext()).load(bomiProfile);
-
+        bomitel = intent.getStringExtra("bomitel");
 
         //달력 날짜 가져오기
         calendarView = findViewById(R.id.calendarView);
@@ -90,27 +93,31 @@ public class BookingActivity extends AppCompatActivity {
         tv_time1 = findViewById(R.id.tv_time1);
         tv_time2 = findViewById(R.id.tv_time2);
 
+        timePicker1.setIs24HourView(true);
         timePicker1.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
-            public void onTimeChanged(TimePicker view, int hour, int minute) {
-                if (hour > 12) {
-                    hour -= 12;
-                    tv_time1.setText("오후 " + hour + "시 " + minute + "분");
-                } else {
-                    tv_time1.setText("오전 " + hour + "시 " + minute + "분");
-                }
+            public void onTimeChanged(TimePicker view, int hourofDay, int minute) {
+//                if (hourofDay > 12) {
+//                    hourofDay -= 12;
+//                    tv_time1.setText("오후 " + hourofDay + "시 " + minute + "분");
+//                } else {
+//                    tv_time1.setText("오전 " + hourofDay + "시 " + minute + "분");
+//                }
+                tv_time1.setText(String.format(Locale.getDefault(), "%02d:%02d", hourofDay, minute));
             }
         });
 
+        timePicker2.setIs24HourView(true);
         timePicker2.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
-            public void onTimeChanged(TimePicker view, int hour, int minute) {
-                if (hour > 12) {
-                    hour -= 12;
-                    tv_time2.setText("오후 " + hour + "시 " + minute + "분");
-                } else {
-                    tv_time2.setText("오전 " + hour + "시 " + minute + "분");
-                }
+            public void onTimeChanged(TimePicker view, int hourofDay, int minute) {
+//                if (hour > 12) {
+//                    hour -= 12;
+//                    tv_time2.setText("오후 " + hour + "시 " + minute + "분");
+//                } else {
+//                    tv_time2.setText("오전 " + hour + "시 " + minute + "분");
+//                }
+                tv_time2.setText(String.format(Locale.getDefault(), "%02d:%02d", hourofDay, minute));
             }
         });
 
@@ -153,6 +160,7 @@ public class BookingActivity extends AppCompatActivity {
                                 booking.setsTime(tv_time1.getText().toString());
                                 booking.setfTime(tv_time2.getText().toString());
                                 booking.setBomiProfile(bomiProfile);
+                                booking.setBomiTel(bomitel);
 
                                 //체크박스 선택
                                 if (option1.isChecked()) {

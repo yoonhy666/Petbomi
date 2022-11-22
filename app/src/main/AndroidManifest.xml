@@ -21,6 +21,41 @@
         tools:replace="android:appComponentFactory"
         tools:targetApi="31">
         <activity
+            android:name=".MyNoticeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MyAddressActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MypetEditActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MyEditActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EventActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MyReviewActivity"
             android:exported="false">
             <meta-data
@@ -35,9 +70,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ScheduleActivity"
-            android:exported="false" />
-        <activity
             android:name=".WriteActivity"
             android:exported="false" />
         <activity
@@ -45,6 +77,9 @@
             android:exported="false" />
         <activity
             android:name=".LocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mypagesecession"
             android:exported="false" />
 
         <meta-data
@@ -80,6 +115,7 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="363c0bcfa0fdf1eb18462541b3a59964" />
+
     </application>
 
 </manifest>
