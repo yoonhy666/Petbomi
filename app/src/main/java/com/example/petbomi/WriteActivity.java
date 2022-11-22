@@ -81,8 +81,14 @@ public class WriteActivity extends AppCompatActivity implements View.OnClickList
             data.put("comment", mComment.getText().toString());
             data.put("nickname", nickname);
             data.put("timestamp", FieldValue.serverTimestamp());
-            mStore.collection("review").document(reviewId).set(data, SetOptions.merge());
-            finish();
+            mStore.collection("review").document(reviewId).set(data, SetOptions.merge())
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            finish();
+                        }
+                    });
+
         }
     }
 }
