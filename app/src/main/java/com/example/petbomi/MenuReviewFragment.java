@@ -46,7 +46,7 @@ public class MenuReviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_review, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_review, container, false);
 
         mReviewRecyclerView = rootView.findViewById(R.id.review_recyclerview);
         layoutManager = new LinearLayoutManager(getActivity());
