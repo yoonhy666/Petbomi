@@ -13,9 +13,6 @@ import android.widget.Button;
 public class BookingfinalActivity extends FragmentActivity {
 
     private Button btn;
-    private FragmentManager fragmentManager = getSupportFragmentManager();
-    private FragmentTransaction transaction = fragmentManager.beginTransaction();
-    private MenuBookingFragment fragment = new MenuBookingFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +23,7 @@ public class BookingfinalActivity extends FragmentActivity {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(BookingfinalActivity.this,LocationActivity.class);
+                    Intent intent=new Intent(BookingfinalActivity.this,MenuActivity.class);
                     startActivity(intent);
                 }
             });
